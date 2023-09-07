@@ -4,15 +4,18 @@
 const PROJECTS = [
     {
         name: "Smart Signal",
-        link: "https://github.com/colehendo/smart-signal"
+        link: "https://github.com/colehendo/smart-signal",
+        description: "A cryptocurrency tracking and prediction tool created as a final project for a college course"
     },
     {
         name: "Infrastructure",
-        link: "https://github.com/colehendo/infrastructure"
+        link: "https://github.com/colehendo/infrastructure",
+        description: "A cryptocurrency tracking and prediction tool created as a final project for a college course"
     },
     {
         name: "Click Counter",
-        link: "https://github.com/colehendo/click-counter"
+        link: "https://github.com/colehendo/click-counter",
+        description: "A cryptocurrency tracking and prediction tool created as a final project for a college course"
     }
 ]
 
@@ -20,7 +23,7 @@ const PROJECTS = [
 const RECOMMENDATIONS = [
     {
         name: "Gerard Brown",
-        relation: "4G Clinical Coworker",
+        linkedin: "https://www.linkedin.com/in/colehendo/",
         recommendation: `Cole is a bright, hardworking professional. 
 He dug into problems that we wanted to solve and found solutions 
 and practical work-arounds. He fit in with the DevOps team at 4G 
@@ -28,7 +31,7 @@ in duty and spirit. A good-natured, and fun person to work with.`
     },
     {
         name: "Alex Cline",
-        relation: "4G Clinical Coworker",
+        linkedin: "https://www.linkedin.com/in/colehendo/",
         recommendation: `Cole was quite beneficial to our DevOps team 
 here at 4G. He was dedicated, hard-working and happy to help 
 however he could. He was good about reaching out when he was 
@@ -38,7 +41,7 @@ one would be happy to see him back on any team I was a part of in the future.`
     },
     {
         name: "Jean-Marie Zoda",
-        relation: "4G Clinical Coworker",
+        linkedin: "https://www.linkedin.com/in/colehendo/",
         recommendation: `First and foremost, it is important to understand that 4G Clinical 
 only hires promising, high-potential, and even brilliant people, and I feel privileged 
 to have been a part of this company. As such, it was at 4G Clinical 
@@ -67,8 +70,16 @@ good fortune to meet at 4GClinical. His future will no doubt be bright!`
 function populateProjects() {
     let projectsList = document.getElementById('projects-list');
     PROJECTS.forEach((item) => {
-        let project = document.createElement("li");
-        project.innerHTML = `<a href="${item.link}">${item.name}</a>`;
+        let project = document.createElement("div");
+        project.innerHTML = `
+        <a href="${item.link}">
+            <div>
+                <h3>${item.name}</h3>
+                <p>
+                    ${item.description}
+                </p>
+            </div>
+        </a>`;
         projectsList.appendChild(project);
     });
 }
@@ -76,10 +87,11 @@ function populateProjects() {
 function populateRecommendations() {
     let recommendationsList = document.getElementById('recommendations-list');
     RECOMMENDATIONS.forEach((item) => {
-        let recommendation = document.createElement("li");
-        recommendation.innerHTML = `<h3>${item.name}</h3>
-        <h4>${item.relation}</h4>
-        <p class="multiline">${item.recommendation}</p>`;
+        let recommendation = document.createElement("div");
+        recommendation.innerHTML = `<p class="multiline">
+            ${item.recommendation}
+        </p>
+        <a href="${item.linkedin}">${item.name}</a>`;
         recommendationsList.appendChild(recommendation);
     });
 }

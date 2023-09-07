@@ -4,46 +4,61 @@
     <meta charset="UTF-8" />
     <title>Cole Henderson</title>
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <div class="top-bar">
-      <a href="https://colehendo.s3.amazonaws.com/cole-henderson-resume.pdf"
-        ><img src="./images/resume.png"
-      /></a>
       <a
         href="https://mail.google.com/mail/?view=cm&source=mailto&to=cole.hendo.tech@gmail.com"
-        ><img src="./images/email.png"
-      /></a>
+        ><h3>cole.hendo.tech@gmail.com</h3></a
+      >
+      <span class="dot-seperator">&bull;</span>
+      <a href="https://colehendo.s3.amazonaws.com/cole-henderson-resume.pdf"
+        ><h3>resume</h3></a
+      >
+      <span class="dot-seperator">&bull;</span>
       <a href="https://github.com/colehendo"
         ><img src="./images/github.png"
       /></a>
+      <span class="dot-seperator">&bull;</span>
       <a href="https://www.linkedin.com/in/colehendo/"
         ><img src="./images/linkedin.png"
       /></a>
     </div>
-    <div class="main-content">
-      <div>
-        <h2>Hi, I'm</h2>
-        <img class="headshot" src="./images/headshot.png" />
+    <div id="main-content">
+      <div id="left-content">
+        <h2 id="introduction">Hi, I'm</h2>
+        <!-- <img class="headshot" src="./images/headshot.png" /> -->
         <h1>Cole</h1>
         <h1>Henderson</h1>
-        <h3>A curious engineer</h3>
-        <p>
+        <div class="descriptor-list">
+          <h3>engineer</h3>
+          <span class="dot-seperator">&bull;</span>
+          <h3>engineer</h3>
+          <span class="dot-seperator">&bull;</span>
+          <h3>engineer</h3>
+        </div>
+        <p style="text-align: justify">
           Here is some information about me. This will eventually be replaced by
           something else super cool, and probably should be pulled from a text
           file, but for now this is how we're going to do it. Hope you enjoy!
         </p>
       </div>
 
-      <div>
+      <div id="right-content">
         <div>
-          <h2>Projects</h2>
-          <ul id="projects-list"></ul>
+          <h2 class="section-title">Projects</h2>
+          <div id="projects-list"></div>
         </div>
         <div>
-          <h2>Recommendations</h2>
-          <ul id="recommendations-list"></ul>
+          <h2 class="section-title">Recommendations</h2>
+          <div id="recommendations-list"></div>
         </div>
       </div>
     </div>

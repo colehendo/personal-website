@@ -1,15 +1,48 @@
-.multiline {
+body {
+    font-family: 'Playfair Display', serif;
+}
+
+h1 {
+    font-size: 100px;
+    margin: 0;
+}
+
+#introduction {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 30px;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+img {
+    width: 64px;
+    height: 64px;
+}
+
+/* .multiline {
     white-space: pre-wrap;
 }
 
-.headshot {
+/* .headshot {
     border-radius: 50%;
     height: 60px;
     width: 60px;
+} */
+
+.top-bar > * {
+    padding: 5px;
 }
 
-.top-bar > a {
-    margin: 5px;
+.dot-seperator {
+    font-size: 25px;
+    align-items: center;
 }
 
 .top-bar {
@@ -19,12 +52,32 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: auto;
+    align-items: center;
+    background-color: ghostwhite;
 }
 
-.main-content {
+#main-content {
     display: flex;
+    justify-content: center;
 }
 
-.main-content > div {
-    width: 50%;
+#main-content > div {
+    width: 508px;
+    margin: 50px;
 }
+
+.descriptor-list {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.descriptor-list > * {
+    margin: 5px;
+}
+
+/* .section-title {
+    text-align: right;
+} */
