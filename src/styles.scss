@@ -1,0 +1,91 @@
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    background-color: #FFFFED;
+    color: #00004d;
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+h1 {
+    font-size: 100px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 50px;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #00004d;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+.icon {
+    width: 25px;
+    height: 25px;
+    padding-right: 10px;
+}
+
+/* .multiline {
+    white-space: pre-wrap;
+}
+
+/* .headshot {
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+} */
+
+.main-content {
+    display: flex;
+    justify-content: center;
+}
+
+.main-content > div {
+    width: 508px;
+    margin: 50px;
+}
+
+
+
+.dot-seperator {
+    font-size: 25px;
+    padding: 0 10px 0 10px;
+}
+
+
+
+
+
+.descriptor-list {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.descriptor-list > * {
+    margin: 5px;
+}
+
+/* .section-title {
+    text-align: right;
+} */
+
+.vertical-line {
+    border-left: 3px solid #00004d;
+    height: 75%;
+}

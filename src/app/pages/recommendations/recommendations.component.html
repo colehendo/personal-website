@@ -1,0 +1,12 @@
+<div class="main-content">
+  <div>
+    <h2>Recommendations</h2>
+    <div
+      id="recommendations-list"
+      *ngFor="let recommendation of recommendations"
+    >
+      <p class="multiline">{{ recommendation.recommendation }}</p>
+      <a [href]="recommendation.linkedin">{{ recommendation.name }}</a>
+    </div>
+  </div>
+</div>

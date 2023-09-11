@@ -1,0 +1,20 @@
+.mat-toolbar {
+    display: inline-flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+.mat-toolbar > * {
+    display: inline-flex;
+    align-items: center;
+}
+
+#left-top-bar > *, #right-top-bar > * {
+    padding: 10px 10px 0 10px;
+    align-items: center;
+    display: inline-flex;
+}
