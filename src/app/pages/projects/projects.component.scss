@@ -1,0 +1,26 @@
+@import 'src/app/colors.scss';
+
+#project-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#language-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#language-list > div {
+    display: flex;
+    align-items: center;
+}
+
+h4 {
+    color: $dark-green;
+    margin: 0;
+}
+
+.dot-seperator {
+    color: $dark-green;
+    padding-bottom: 4px;
+}

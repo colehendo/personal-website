@@ -1,3 +1,5 @@
+@import 'src/app/colors.scss';
+
 .mat-toolbar {
     display: inline-flex;
     justify-content: space-between;
@@ -6,6 +8,8 @@
     left: 0;
     width: 100%;
     height: auto;
+    background-color: $dark-green;
+    color: white;
 }
 
 .mat-toolbar > * {
@@ -14,7 +18,15 @@
 }
 
 #left-top-bar > *, #right-top-bar > * {
-    padding: 10px 10px 0 10px;
+    padding: 10px;
     align-items: center;
     display: inline-flex;
+}
+
+.page:hover {
+    cursor: pointer;
+}
+
+a {
+    color: white;
 }

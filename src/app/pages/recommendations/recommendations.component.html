@@ -1,12 +1,32 @@
 <div class="main-content">
   <div>
-    <h2>Recommendations</h2>
-    <div
-      id="recommendations-list"
-      *ngFor="let recommendation of recommendations"
-    >
-      <p class="multiline">{{ recommendation.recommendation }}</p>
-      <a [href]="recommendation.linkedin">{{ recommendation.name }}</a>
+    <h2 class="page-title">Recommendations</h2>
+    <div *ngFor="let recommendation of recommendations; let index = index">
+      <div
+        class="page-list-item"
+        [ngClass]="{
+          'not-selected-page-list-item': selectedRecommendationID !== index,
+          'selected-page-list-item': selectedRecommendationID === index
+        }"
+        (click)="selectRecommendation(index)"
+      >
+        <h3>{{ recommendation.name }}</h3>
+        <span>{{ recommendation.title }}, {{ recommendation.company }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="page-right-column">
+    <p>
+      {{ selectedRecommendation.recommendation }}
+    </p>
+    <div id="signature">
+      <div>
+        <h4>- {{ selectedRecommendation.name }}</h4>
+        <span>{{ selectedRecommendation.relation }}</span>
+      </div>
+      <a [href]="selectedRecommendation.linkedin"
+        ><img class="logo" src="../../assets/images/linkedin.png"
+      /></a>
     </div>
   </div>
 </div>
