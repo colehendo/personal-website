@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Futura', sans-serif;
     margin: 0;
     background-color: $cream;
     color: $navy;
@@ -20,11 +20,13 @@ body::-webkit-scrollbar {
 }
 
 h1 {
+    font-family: 'Playfair Display', serif;
     font-size: 100px;
     margin: 0;
 }
 
 h2 {
+    font-family: 'Playfair Display', serif;
     font-size: 50px;
     margin: 0;
 }
@@ -43,9 +45,10 @@ a {
     padding-right: 10px;
 }
 
-// .multiline {
-//     white-space: pre-wrap;
-// }
+.multiline {
+    white-space: pre-wrap;
+    margin-top: 0;
+}
 
 .main-content {
     display: flex;
@@ -58,7 +61,7 @@ a {
     margin: 50px;
 }
 
-.dot-seperator {
+.dot-separator {
     font-size: 25px;
     padding: 0 10px 0 10px;
 }
@@ -74,10 +77,6 @@ a {
     margin: 5px;
 }
 
-/* .section-title {
-    text-align: right;
-} */
-
 .page-title {
     margin-bottom: 40px;
 }
@@ -87,6 +86,9 @@ a {
     padding: 10px;
     border: 3px solid $dark-green;
     border-radius: 25px;
+    transition:
+        background-color 0.2s,
+        color 0.2s;
 }
 
 .page-list-item > * {

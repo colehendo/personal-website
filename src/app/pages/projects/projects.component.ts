@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { IProject } from 'src/app/interfaces/projects';
 import { PROJECTS } from 'src/app/constants/projects';
 
