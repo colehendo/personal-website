@@ -1,8 +1,23 @@
-<div class="main-content">
+<div @pageLoadAndLeave class="main-content">
   <div>
     <h2 class="page-title">Projects</h2>
-    <div *ngFor="let project of projects; let index = index">
+    <div *ngIf="!screenIsFullSize">
+      <mat-select
+        class="page-items-dropdown-selection"
+        [(value)]="selectedProject"
+        panelClass="page-items-dropdown-panel"
+      >
+        <mat-option
+          *ngFor="let project of projects"
+          [value]="project"
+        >
+          <h3>{{ project.name }}</h3>
+        </mat-option>
+      </mat-select>
+    </div>
+    <div *ngIf="screenIsFullSize" class="page-list-items">
       <div
+        *ngFor="let project of projects; let index = index"
         class="page-list-item"
         [ngClass]="{
           'not-selected-page-list-item': selectedProjectID !== index,
@@ -10,14 +25,14 @@
         }"
         (click)="selectProject(index)"
       >
-        <h3 style="margin: 0">{{ project.name }}</h3>
-        <p style="margin: 0">
+        <h3>{{ project.name }}</h3>
+        <p>
           {{ project.short_description }}
         </p>
       </div>
     </div>
   </div>
-  <div class="page-right-column">
+  <div [@fade]="showProject" class="page-right-column">
     <div id="project-header">
       <div id="language-list">
         <div
@@ -35,7 +50,7 @@
         /></a>
       </div>
     </div>
-    <p>
+    <p class="multiline">
       {{ selectedProject.full_description }}
     </p>
   </div>

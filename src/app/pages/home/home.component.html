@@ -1,28 +1,28 @@
+<!-- <div @pageLoad class="main-content"> -->
 <div class="main-content">
   <div>
     <div id="introduction-head">
       <div>
-        <h2>Hi, I'm</h2>
-        <h1>Cole</h1>
+        <div id="introduction-beginning">
+          <h2 @hi>Hi,</h2>
+          <h2 @im>I'm</h2>
+        </div>
+        <h1 @introductionCore>Cole</h1>
       </div>
-      <div class="headshot">
+      <div @introductionCore class="headshot">
         <img src="../../../assets/images/headshot.png" />
       </div>
     </div>
-    <h1>Henderson</h1>
+    <h1 @introductionCore>Henderson</h1>
     <div class="descriptor-list">
-      <h3>engineer</h3>
-      <span class="dot-separator">&bull;</span>
-      <h3>engineer</h3>
-      <span class="dot-separator">&bull;</span>
-      <h3>engineer</h3>
+      <h3 @firstDescriptor>engineer</h3>
+      <span @secondDescriptor class="dot-separator">&bull;</span>
+      <h3 @secondDescriptor>inquirer</h3>
+      <span @thirdDescriptor class="dot-separator">&bull;</span>
+      <h3 @thirdDescriptor>adventurer</h3>
     </div>
   </div>
-  <div id="personal-info-statement">
-    <p>
-      Here is some information about me. This will eventually be replaced by
-      something else super cool, and probably should be pulled from a text file,
-      but for now this is how we're going to do it. Hope you enjoy!
-    </p>
+  <div @statement *ngIf="showStatement" id="personal-info-statement">
+    <p class="multiline">{{ statement }}</p>
   </div>
 </div>

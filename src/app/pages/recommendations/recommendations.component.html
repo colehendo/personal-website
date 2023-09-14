@@ -1,28 +1,48 @@
-<div class="main-content">
+<div @pageLoadAndLeave class="main-content">
   <div>
     <h2 class="page-title">Recommendations</h2>
-    <div *ngFor="let recommendation of recommendations; let index = index">
-      <div
-        class="page-list-item"
-        [ngClass]="{
-          'not-selected-page-list-item': selectedRecommendationID !== index,
-          'selected-page-list-item': selectedRecommendationID === index
-        }"
-        (click)="selectRecommendation(index)"
+    <div *ngIf="!screenIsFullSize">
+      <mat-select
+        class="page-items-dropdown-selection"
+        [(value)]="selectedRecommendation"
+        panelClass="page-items-dropdown-panel"
       >
-        <h3>{{ recommendation.name }}</h3>
-        <span>{{ recommendation.title }}, {{ recommendation.company }}</span>
+        <mat-option
+          *ngFor="let recommendation of recommendations"
+          [value]="recommendation"
+        >
+          <h3>{{ recommendation.name }}</h3>
+        </mat-option>
+      </mat-select>
+    </div>
+    <div *ngIf="screenIsFullSize">
+      <div *ngFor="let recommendation of recommendations; let index = index">
+        <div
+          class="page-list-item"
+          [ngClass]="{
+            'not-selected-page-list-item': selectedRecommendationID !== index,
+            'selected-page-list-item': selectedRecommendationID === index
+          }"
+          (click)="selectRecommendation(index)"
+        >
+          <h3>{{ recommendation.name }}</h3>
+          <span>{{ recommendation.title }}, {{ recommendation.company }}</span>
+        </div>
       </div>
     </div>
   </div>
-  <div class="page-right-column">
+  <div [@fade]="showRecommendation" class="page-right-column">
     <img class="logo" src="../../assets/images/quote.png" />
     <p class="multiline">
       {{ selectedRecommendation.recommendation }}
     </p>
     <div id="signature">
-      <div>
+      <div style="display: block;">
         <h4>- {{ selectedRecommendation.name }}</h4>
+        <span *ngIf="!screenIsFullSize"
+          >{{ selectedRecommendation.title }},
+          {{ selectedRecommendation.company }}</span
+        >
         <span>{{ selectedRecommendation.relation }}</span>
       </div>
       <a [href]="selectedRecommendation.linkedin"
