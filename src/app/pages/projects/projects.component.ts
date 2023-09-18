@@ -4,7 +4,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { IProject } from 'src/app/interfaces/projects';
 import { PROJECTS } from 'src/app/constants/projects';
-import { BIG_SCREEN, MEDIUM_SCREEN } from 'src/app/constants/screen-sizes';
+import { BIG_SCREEN } from 'src/app/constants/screen-sizes';
 
 @Component({
   selector: 'app-projects',
@@ -39,7 +39,7 @@ export class ProjectsComponent implements OnInit {
   selectedProject: IProject = this.projects[this.selectedProjectID];
 
   showProject: boolean = true;
-  screenIsFullSize: boolean = true;
+  screenIsBig: boolean = true;
 
   selectProject(projectID: number) {
     this.showProject = false;
@@ -52,14 +52,8 @@ export class ProjectsComponent implements OnInit {
   }
 
   private watchScreenSize() {
-    this.breakpointObserver
-      .observe([BIG_SCREEN, MEDIUM_SCREEN])
-      .subscribe(() => {
-        this.screenIsFullSize = this.breakpointObserver.isMatched(BIG_SCREEN)
-          ? true
-          : this.breakpointObserver.isMatched(MEDIUM_SCREEN)
-          ? false
-          : true;
-      });
+    this.breakpointObserver.observe([BIG_SCREEN]).subscribe((result) => {
+      this.screenIsBig = result.breakpoints[BIG_SCREEN];
+    });
   }
 }

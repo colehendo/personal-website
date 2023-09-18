@@ -5,9 +5,6 @@
     justify-content: space-between;
     position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
     background-color: $dark-green;
     color: white;
 }
@@ -33,4 +30,10 @@ a {
 
 .dot-separator {
     color: $cream;
+}
+
+@media (max-width: $small-page-size) {
+    .mat-toolbar {
+        justify-content: end;
+    }
 }

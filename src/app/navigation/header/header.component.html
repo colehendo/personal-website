@@ -1,23 +1,23 @@
 <mat-toolbar>
-  <div id="left-top-bar">
+  <div *ngIf="!screenIsSmall" id="left-top-bar">
     <div class="page" routerLink="">
       <img class="icon" src="../../assets/images/home.png" />
-      <h3 *ngIf="screenIsFullSize">Home</h3>
+      <h3 *ngIf="screenIsBig">Home</h3>
     </div>
     <span class="dot-separator">&bull;</span>
     <div class="page" routerLink="projects">
       <img class="icon" src="../../assets/images/projects.png" />
-      <h3 *ngIf="screenIsFullSize">Projects</h3>
+      <h3 *ngIf="screenIsBig">Projects</h3>
     </div>
     <span class="dot-separator">&bull;</span>
     <div class="page" routerLink="recommendations">
       <img class="icon" src="../../assets/images/like.png" />
-      <h3 *ngIf="screenIsFullSize">Recommendations</h3>
+      <h3 *ngIf="screenIsBig">Recommendations</h3>
     </div>
     <span class="dot-separator">&bull;</span>
     <a href="https://colehendo.s3.amazonaws.com/cole-henderson-resume.pdf"
       ><img class="icon" src="../../assets/images/user.png" />
-      <h3 *ngIf="screenIsFullSize">Resume</h3></a
+      <h3 *ngIf="screenIsBig">Resume</h3></a
     >
   </div>
   <div id="right-top-bar">

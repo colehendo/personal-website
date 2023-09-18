@@ -4,7 +4,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { IRecommendation } from 'src/app/interfaces/recommendations';
 import { RECOMMENDATIONS } from 'src/app/constants/recommendations';
-import { BIG_SCREEN, MEDIUM_SCREEN } from 'src/app/constants/screen-sizes';
+import { BIG_SCREEN } from 'src/app/constants/screen-sizes';
 
 @Component({
   selector: 'app-recommendations',
@@ -40,7 +40,7 @@ export class RecommendationsComponent implements OnInit {
     this.recommendations[this.selectedRecommendationID];
 
   showRecommendation: boolean = true;
-  screenIsFullSize: boolean = true;
+  screenIsBig: boolean = true;
 
   selectRecommendation(recommendationID: number) {
     this.showRecommendation = false;
@@ -54,13 +54,9 @@ export class RecommendationsComponent implements OnInit {
 
   private watchScreenSize() {
     this.breakpointObserver
-      .observe([BIG_SCREEN, MEDIUM_SCREEN])
-      .subscribe(() => {
-        this.screenIsFullSize = this.breakpointObserver.isMatched(BIG_SCREEN)
-          ? true
-          : this.breakpointObserver.isMatched(MEDIUM_SCREEN)
-          ? false
-          : true;
+      .observe([BIG_SCREEN])
+      .subscribe((result) => {
+        this.screenIsBig = result.breakpoints[BIG_SCREEN];
       });
   }
 }

@@ -1,7 +1,7 @@
 <div @pageLoadAndLeave class="main-content">
   <div>
     <h2 class="page-title">Recommendations</h2>
-    <div *ngIf="!screenIsFullSize">
+    <div *ngIf="!screenIsBig">
       <mat-select
         class="page-items-dropdown-selection"
         [(value)]="selectedRecommendation"
@@ -15,7 +15,7 @@
         </mat-option>
       </mat-select>
     </div>
-    <div *ngIf="screenIsFullSize">
+    <div *ngIf="screenIsBig">
       <div *ngFor="let recommendation of recommendations; let index = index">
         <div
           class="page-list-item"
@@ -39,7 +39,7 @@
     <div id="signature">
       <div>
         <h4>- {{ selectedRecommendation.name }}</h4>
-        <span *ngIf="!screenIsFullSize"
+        <span *ngIf="!screenIsBig"
           >{{ selectedRecommendation.title }},
           {{ selectedRecommendation.company }}</span
         >
