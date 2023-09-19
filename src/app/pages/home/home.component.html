@@ -27,7 +27,11 @@
       <h3 @thirdDescriptor>adventurer</h3>
     </div>
   </div>
-  <div @statement *ngIf="showStatement" id="personal-info-statement">
+  <div
+    @statement
+    *ngIf="showStatement"
+    id="personal-info-statement"
+  >
     <p class="multiline">{{ statementStart }}</p>
     <div
       *ngFor="let project of statementProjectsList"

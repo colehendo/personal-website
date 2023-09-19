@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from './shared.module';
 
+import { CookieService } from 'ngx-cookie-service';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './navigation/header/header.component';
@@ -19,7 +21,7 @@ import { FooterComponent } from './navigation/footer/footer.component';
     FooterComponent,
   ],
   imports: [AppRoutingModule, SharedModule],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

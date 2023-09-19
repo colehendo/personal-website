@@ -1,4 +1,5 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 import {
   FIRST_DESCRIPTOR,
@@ -10,6 +11,7 @@ import {
   STATEMENT,
   THIRD_DESCRIPTOR,
 } from 'src/app/animations/home';
+import { VISITED } from 'src/app/constants/cookies';
 import {
   STATEMENT_END,
   STATEMENT_PROJECTS_LIST,
@@ -31,7 +33,25 @@ import {
     STATEMENT,
   ],
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements AfterViewInit, OnInit {
+  constructor(private cookieService: CookieService) {}
+
+  firstPageLoad: boolean = true;
+  showStatement: boolean = false;
+
+  statementStart = STATEMENT_START;
+  statementEnd = STATEMENT_END;
+  statementProjectsList = STATEMENT_PROJECTS_LIST;
+
+  ngOnInit() {
+    if (!this.cookieService.check(VISITED)) {
+      this.cookieService.set(VISITED, 'true', 1);
+    } else {
+      this.firstPageLoad = false;
+      this.showStatement = true;
+    }
+  }
+
   ngAfterViewInit() {
     if (!this.showStatement) {
       setTimeout(() => {
@@ -39,11 +59,4 @@ export class HomeComponent implements AfterViewInit {
       }, 5000);
     }
   }
-
-  firstPageLoad: boolean = true;
-  showStatement: boolean = !this.firstPageLoad;
-
-  statementStart = STATEMENT_START;
-  statementEnd = STATEMENT_END;
-  statementProjectsList = STATEMENT_PROJECTS_LIST;
 }
