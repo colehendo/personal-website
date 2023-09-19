@@ -1,7 +1,7 @@
-import { animate, style, transition, trigger } from '@angular/animations';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
+import { FADE, PAGE_LOAD_AND_LEAVE } from 'src/app/animations/recommendations';
 import { IRecommendation } from 'src/app/interfaces/recommendations';
 import { RECOMMENDATIONS } from 'src/app/constants/recommendations';
 import { BIG_SCREEN } from 'src/app/constants/screen-sizes';
@@ -11,21 +11,7 @@ import { BIG_SCREEN } from 'src/app/constants/screen-sizes';
   templateUrl: './recommendations.component.html',
   styleUrls: ['./recommendations.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  animations: [
-    trigger('pageLoadAndLeave', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('500ms', style({ opacity: 1 })),
-      ]),
-    ]),
-    trigger('fade', [
-      transition('false => true', [
-        style({ opacity: 0 }),
-        animate('200ms', style({ opacity: 1 })),
-      ]),
-      transition('true => false', [animate('200ms', style({ opacity: 0 }))]),
-    ]),
-  ],
+  animations: [PAGE_LOAD_AND_LEAVE, FADE],
 })
 export class RecommendationsComponent implements OnInit {
   constructor(private breakpointObserver: BreakpointObserver) {}
@@ -53,10 +39,8 @@ export class RecommendationsComponent implements OnInit {
   }
 
   private watchScreenSize() {
-    this.breakpointObserver
-      .observe([BIG_SCREEN])
-      .subscribe((result) => {
-        this.screenIsBig = result.breakpoints[BIG_SCREEN];
-      });
+    this.breakpointObserver.observe([BIG_SCREEN]).subscribe((result) => {
+      this.screenIsBig = result.breakpoints[BIG_SCREEN];
+    });
   }
 }

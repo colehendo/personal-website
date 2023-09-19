@@ -1,5 +1,8 @@
 <!-- <div @pageLoad class="main-content"> -->
-<div class="main-content">
+<div
+  [@pageLoad]="{ params: { firstPageLoad: firstPageLoad } }"
+  class="main-content"
+>
   <div>
     <div id="hi-im-cole-henderson">
       <div id="hi-im-cole">
@@ -26,11 +29,14 @@
   </div>
   <div @statement *ngIf="showStatement" id="personal-info-statement">
     <p class="multiline">{{ statementStart }}</p>
-    <div *ngFor="let project of statementProjectsList" class="personal-info-statement-project">
+    <div
+      *ngFor="let project of statementProjectsList"
+      class="personal-info-statement-project"
+    >
       <span>-</span>
       <span class="multiline">{{ project }}</span>
     </div>
-    
+
     <p class="multiline">{{ statementEnd }}</p>
   </div>
 </div>

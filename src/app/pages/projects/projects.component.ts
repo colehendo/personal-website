@@ -1,7 +1,7 @@
-import { animate, style, transition, trigger } from '@angular/animations';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
+import { FADE, PAGE_LOAD_AND_LEAVE } from 'src/app/animations/projects';
 import { IProject } from 'src/app/interfaces/projects';
 import { PROJECTS } from 'src/app/constants/projects';
 import { BIG_SCREEN } from 'src/app/constants/screen-sizes';
@@ -11,21 +11,7 @@ import { BIG_SCREEN } from 'src/app/constants/screen-sizes';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  animations: [
-    trigger('pageLoadAndLeave', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('500ms', style({ opacity: 1 })),
-      ]),
-    ]),
-    trigger('fade', [
-      transition('false => true', [
-        style({ opacity: 0 }),
-        animate('200ms', style({ opacity: 1 })),
-      ]),
-      transition('true => false', [animate('200ms', style({ opacity: 0 }))]),
-    ]),
-  ],
+  animations: [PAGE_LOAD_AND_LEAVE, FADE],
 })
 export class ProjectsComponent implements OnInit {
   constructor(private breakpointObserver: BreakpointObserver) {}
