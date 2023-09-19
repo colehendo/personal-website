@@ -5,7 +5,9 @@ import {
   BIG_SCREEN,
   MEDIUM_SCREEN_MAX,
   MEDIUM_SCREEN_MIN,
-  SMALL_SCREEN,
+  SMALL_SCREEN_MAX,
+  SMALL_SCREEN_MIN,
+  SUPER_SMALL_SCREEN,
 } from 'src/app/constants/screen-sizes';
 
 @Component({
@@ -23,14 +25,27 @@ export class HeaderComponent implements OnInit {
   screenIsBig: boolean = true;
   screenIsMedium: boolean = false;
   screenIsSmall: boolean = false;
+  screenIsSuperSmall: boolean = false;
 
   private watchScreenSize() {
     this.breakpointObserver
-      .observe([BIG_SCREEN, MEDIUM_SCREEN_MAX, MEDIUM_SCREEN_MIN, SMALL_SCREEN])
+      .observe([
+        BIG_SCREEN,
+        MEDIUM_SCREEN_MAX,
+        MEDIUM_SCREEN_MIN,
+        SMALL_SCREEN_MAX,
+        SMALL_SCREEN_MIN,
+        SUPER_SMALL_SCREEN,
+      ])
       .subscribe((result) => {
         this.screenIsBig = result.breakpoints[BIG_SCREEN];
-        this.screenIsMedium = result.breakpoints[MEDIUM_SCREEN_MAX] && result.breakpoints[MEDIUM_SCREEN_MIN];
-        this.screenIsSmall = result.breakpoints[SMALL_SCREEN];
+        this.screenIsMedium =
+          result.breakpoints[MEDIUM_SCREEN_MAX] &&
+          result.breakpoints[MEDIUM_SCREEN_MIN];
+        this.screenIsSmall =
+          result.breakpoints[SMALL_SCREEN_MAX] &&
+          result.breakpoints[SMALL_SCREEN_MIN];
+        this.screenIsSuperSmall = result.breakpoints[SUPER_SMALL_SCREEN];
       });
   }
 }

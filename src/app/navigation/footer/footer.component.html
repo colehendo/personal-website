@@ -1,17 +1,23 @@
-<mat-toolbar *ngIf="screenIsSmall">
-  <div class="page" routerLink="">
+<mat-toolbar *ngIf="screenIsSmall || screenIsSuperSmall">
+  <div routerLink="">
     <img class="icon" src="../../assets/images/home.png" />
+    <h3 *ngIf="!screenIsSuperSmall">Home</h3>
   </div>
   <span class="dot-separator">&bull;</span>
-  <div class="page" routerLink="projects">
+  <div routerLink="projects">
     <img class="icon" src="../../assets/images/projects.png" />
+    <h3 *ngIf="!screenIsSuperSmall">Projects</h3>
   </div>
   <span class="dot-separator">&bull;</span>
-  <div class="page" routerLink="recommendations">
+  <div routerLink="recommendations">
     <img class="icon" src="../../assets/images/like.png" />
+    <h3 *ngIf="!screenIsSuperSmall">Recommendations</h3>
   </div>
   <span class="dot-separator">&bull;</span>
-  <a href="https://colehendo.s3.amazonaws.com/cole-henderson-resume.pdf"
-    ><img class="icon" src="../../assets/images/user.png" />
-  </a>
+  <div>
+    <a href="https://colehendo.s3.amazonaws.com/cole-henderson-resume.pdf"
+      ><img class="icon" src="../../assets/images/user.png" />
+      <h3 *ngIf="!screenIsSuperSmall">Resume</h3></a
+    >
+  </div>
 </mat-toolbar>

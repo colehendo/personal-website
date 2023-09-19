@@ -15,12 +15,14 @@
     align-items: center;
 }
 
+#language-list > div > .dot-separator {
+    color: $dark-green;
+    padding: 2px 10px 0 10px;
+}
+
 h4 {
     color: $dark-green;
     margin: 0;
 }
 
-.dot-separator {
-    color: $dark-green;
-    padding: 2px 10px 0 10px;
-}
+

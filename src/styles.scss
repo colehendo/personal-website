@@ -1,16 +1,11 @@
 @import 'src/app/constants.scss';
 @import "~@angular/cdk/overlay-prebuilt.css";
 
-html {
-    min-height: 100%;
-}
-
 body {
     font-family: 'Futura', sans-serif;
     margin: 0;
     background-color: $cream;
     color: $navy;
-    height: 90vh;
 }
 
 h1 {
@@ -52,7 +47,7 @@ a {
 .main-content {
     display: flex;
     justify-content: center;
-    height: 100%;
+    min-height: 100%;
 }
 
 .main-content > div {
@@ -127,7 +122,7 @@ a {
 
 .page-right-column {
     padding-top: 90px;
-    width: $column-width;
+    max-width: $column-width;
 }
 
 .page-items-dropdown-panel.mat-mdc-select-panel {
@@ -159,13 +154,18 @@ a {
 
 .cdk-overlay-container .cdk-overlay-pane{
     margin: 20px 0 0 -12px;
- }
+}
+
+@media (min-width: $medium-page-size) {
+    body {
+        height: 90vh;
+    }
+}
 
 @media (max-width: $medium-page-size) {
     .main-content {
         display: block;
         margin-top: 50px;
-        height: 100%;
     }
 
     .main-content > div {
@@ -179,5 +179,43 @@ a {
 
     .icon {
         padding-right: 0;
+    }
+}
+
+@media (max-width: $small-page-size) {
+    .main-content {
+        display: block;
+        margin: 50px 35px 50px 35px;
+    }
+
+    .main-content > div {
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 55px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: $super-small-page-size) {
+    .main-content {
+        display: block;
+        margin: 50px 35px 50px 35px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 12px;
     }
 }

@@ -3,8 +3,10 @@
 .mat-toolbar {
     display: inline-flex;
     justify-content: center;
-    position: sticky;
+    position: fixed;
     bottom: 0;
+    left: 0;
+    right: 0;
     background-color: $dark-green;
     color: white;
 }
@@ -13,4 +15,26 @@
     display: inline-flex;
     align-items: center;
     padding: 10px;
+}
+
+.mat-toolbar > div {
+    display: block;
+    text-align: center;
+    font-size: 10px;
+}
+
+.mat-toolbar > div:hover {
+    cursor: pointer;
+}
+
+a {
+    color: white;
+}
+
+@media (max-width: $super-small-page-size) {
+    .icon {
+        width: 15px;
+        height: 15px;
+        padding-right: 0;
+    }
 }

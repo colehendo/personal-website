@@ -1,10 +1,24 @@
-.main-content {
-    align-items: center;
+@import 'src/app/constants.scss';
+
+.main-content > div {
+    text-align: center;
 }
 
-#introduction-head {
+#hi-im-cole-henderson {
+    display: inline-block;
+}
+
+#hi-im-cole {
     display: flex;
     justify-content: space-between;
+}
+
+#hi-im {
+    display: flex;
+}
+
+#hi-im > h2 {
+    margin-right: 10px;
 }
 
 #personal-info-statement {
@@ -27,10 +41,24 @@
     width: 195px;
 }
 
-#introduction-beginning {
-    display: flex;
+@media (max-width: $small-page-size) {
+    h3, .dot-separator {
+        font-size: 15px;
+    }
+
+    .headshot > img {
+        height: 110px;
+        width: 110px;
+    }
 }
 
-#introduction-beginning > h2 {
-    margin-right: 10px;
+@media (max-width: $super-small-page-size) {
+    h3, .dot-separator {
+        font-size: 10px;
+    }
+
+    .headshot > img {
+        height: 80px;
+        width: 80px;
+    }
 }
