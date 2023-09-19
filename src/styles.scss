@@ -1,10 +1,22 @@
 @import 'src/app/constants.scss';
 @import "~@angular/cdk/overlay-prebuilt.css";
 
+/*
+Core
+*/
+
 body {
-    font-family: 'Futura', sans-serif;
     margin: 0;
     background-color: $cream;
+}
+
+
+/*
+Font
+*/
+
+body {
+    font-family: 'Futura', sans-serif;
     color: $navy;
 }
 
@@ -28,6 +40,16 @@ a {
     text-decoration: none;
 }
 
+.multiline {
+    white-space: pre-wrap;
+    margin-top: 0;
+}
+
+
+/*
+Images
+*/
+
 .logo {
     width: 50px;
     height: 50px;
@@ -39,10 +61,10 @@ a {
     padding-right: 10px;
 }
 
-.multiline {
-    white-space: pre-wrap;
-    margin-top: 0;
-}
+
+/*
+Main Pages
+*/
 
 .main-content {
     display: flex;
@@ -53,6 +75,10 @@ a {
 .main-content > div {
     max-width: $column-width;
     margin: 50px;
+}
+
+.page-title {
+    margin-bottom: 40px;
 }
 
 .dot-separator {
@@ -70,9 +96,10 @@ a {
     margin: 5px;
 }
 
-.page-title {
-    margin-bottom: 40px;
-}
+
+/*
+Selection List
+*/
 
 .page-list-items {
     max-height: 55vh;
@@ -125,6 +152,11 @@ a {
     max-width: $column-width;
 }
 
+
+/*
+Drop Down
+*/
+
 .page-items-dropdown-panel.mat-mdc-select-panel {
     background: $dark-green;
     color: white;
@@ -146,7 +178,6 @@ a {
     border-radius: 25px;
 }
 
-
 .page-items-dropdown-selection:hover {
     background-color: $opaque-dark-green;
     color: white;
@@ -155,6 +186,11 @@ a {
 .cdk-overlay-container .cdk-overlay-pane{
     margin: 20px 0 0 -12px;
 }
+
+
+/*
+Small Screen
+*/
 
 @media (min-width: $medium-page-size) {
     body {

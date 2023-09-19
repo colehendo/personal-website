@@ -8,8 +8,12 @@
     text-align: center;
 }
 
-#hi-im-cole-henderson {
-    display: inline-block;
+#hi-im {
+    display: flex;
+}
+
+#hi-im > h2 {
+    margin-right: 10px;
 }
 
 #hi-im-cole {
@@ -17,12 +21,8 @@
     justify-content: space-between;
 }
 
-#hi-im {
-    display: flex;
-}
-
-#hi-im > h2 {
-    margin-right: 10px;
+#hi-im-cole-henderson {
+    display: inline-block;
 }
 
 .dot-separator {

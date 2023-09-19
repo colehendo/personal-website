@@ -13,7 +13,7 @@ export const STATEMENT_END = `
 I specialize in Full Stack Development and Cloud Computing — specifically Amazon Web Services (AWS). I am proficient in Python, Angular, Bash, JavaScript, and Groovy, as well as the DevOps framework, including Kubernetes, Terraform, Docker, and Linux — two lists I am constantly working to expand.`;
 
 export const STATEMENT_PROJECTS_LIST = [
-    `I built and scaled a company-wide ticket automation site, slashing my team’s hiring need in half`,
-    `I led multiple cloud cost reduction efforts, reducing total AWS bills by double-digit percentiles in all instances`,
-    `I increased applications to my team by 10-fold through rigorous restructuring and reformatting of the underlying hiring process`,
-  ];
+  `I built and scaled a company-wide ticket automation site, slashing my team’s hiring need in half`,
+  `I led multiple cloud cost reduction efforts, reducing total AWS bills by double-digit percentiles in all instances`,
+  `I increased applications to my team by 10-fold through rigorous restructuring and reformatting of the underlying hiring process`,
+];
