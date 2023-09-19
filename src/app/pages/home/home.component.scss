@@ -1,5 +1,9 @@
 @import 'src/app/constants.scss';
 
+.main-content {
+    align-items: center;
+}
+
 .main-content > div {
     text-align: center;
 }
@@ -22,8 +26,18 @@
 }
 
 #personal-info-statement {
-    display: flex;
-    align-items: center;
+    display: block;
+}
+
+.personal-info-statement-project {
+    display: inline-flex;
+    width: 90%;
+}
+
+.personal-info-statement-project > * {
+    font-family: 'Nunito', sans-serif;
+    margin: 5px;
+    text-align: justify;
 }
 
 #personal-info-statement > p {
