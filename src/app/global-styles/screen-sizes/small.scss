@@ -1,0 +1,25 @@
+@import 'src/app/global-styles/constants.scss';
+
+
+@media (max-width: $small-page-size) and (min-width: $super-small-page-size) {
+    .main-content {
+        display: block;
+        margin: 120px 35px 100px 35px;
+    }
+
+    .main-content > div {
+        margin: auto;
+    }
+
+    .page-right-column {
+        padding-top: 30px;
+    }
+
+    h1 {
+        font-size: 55px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+}

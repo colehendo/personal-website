@@ -1,0 +1,33 @@
+@import 'src/app/global-styles/constants.scss';
+@import "~@angular/cdk/overlay-prebuilt.css";
+
+
+.page-items-dropdown-panel.mat-mdc-select-panel {
+    background: $dark-green;
+    color: white;
+    border-radius: 25px !important;
+    font-weight: 600;
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+.page-items-dropdown-panel.mat-mdc-select-panel::-webkit-scrollbar {
+    display: none;  /* Hide scrollbar for Chrome and Safari */
+}
+
+.page-items-dropdown-selection {
+    width: 50% !important;
+    font-weight: 600 !important;
+    padding: 10px;
+    border: 3px solid $dark-green;
+    border-radius: 25px;
+}
+
+.page-items-dropdown-selection:hover {
+    background-color: $opaque-dark-green;
+    color: white;
+}
+
+.cdk-overlay-container .cdk-overlay-pane{
+    margin: 20px 0 0 -12px;
+}

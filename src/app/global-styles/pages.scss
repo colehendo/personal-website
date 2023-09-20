@@ -1,0 +1,38 @@
+@import 'src/app/global-styles/constants.scss';
+
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    min-height: 100%;
+    margin-top: 70px;
+}
+
+.main-content > div {
+    max-width: $column-width;
+    margin: 50px;
+}
+
+.page-title {
+    margin-bottom: 40px;
+}
+
+.page-right-column {
+    padding-top: 90px;
+    max-width: $column-width;
+}
+
+.dot-separator {
+    font-size: 25px;
+}
+
+.descriptor-list {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.descriptor-list > * {
+    margin: 5px;
+}

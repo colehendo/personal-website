@@ -1,0 +1,48 @@
+@import 'src/app/global-styles/constants.scss';
+
+
+.page-list-items {
+    max-height: 55vh;
+    overflow-y: auto;
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+
+    mask-image: linear-gradient(white 85%, transparent);
+    padding-bottom: 60px;
+}
+
+.page-list-items::-webkit-scrollbar {
+    display: none;  /* Hide scrollbar for Chrome and Safari */
+}
+
+.page-list-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 3px solid $dark-green;
+    border-radius: 25px;
+    transition:
+        background-color 0.2s,
+        color 0.2s;
+}
+
+.page-list-item > * {
+    margin: 0;
+}
+
+.page-list-item:hover {
+    cursor: pointer;
+}
+
+.selected-page-list-item {
+    background-color: $dark-green;
+    color: white;
+}
+
+.selected-page-list-item:hover {
+    cursor: pointer;
+}
+
+.not-selected-page-list-item:hover {
+    background-color: $opaque-dark-green;
+    color: white;
+}

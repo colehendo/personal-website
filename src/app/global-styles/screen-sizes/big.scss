@@ -1,0 +1,8 @@
+@import 'src/app/global-styles/constants.scss';
+
+
+@media (min-width: $medium-page-size) {
+    body {
+        height: 90vh;
+    }
+}

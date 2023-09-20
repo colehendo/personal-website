@@ -1,0 +1,17 @@
+@import 'src/app/global-styles/constants.scss';
+
+
+body {
+    margin: 0;
+    background-color: $cream;
+}
+
+body {
+    overflow-y: auto;
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;  /* Hide scrollbar for Chrome and Safari */
+}
