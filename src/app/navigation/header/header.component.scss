@@ -3,7 +3,7 @@
 .mat-toolbar {
     display: inline-flex;
     justify-content: space-between;
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -34,7 +34,7 @@ a {
     color: $cream;
 }
 
-@media (max-width: $medium-page-size) {
+@media (max-width: $medium-page-size) and (min-width: $small-page-size) {
     #left-top-bar > div, #left-top-bar > a {
         display: block;
         text-align: center;
@@ -46,9 +46,13 @@ a {
     }
 }
 
-@media (max-width: $small-page-size) {
+@media (max-width: $small-page-size) and (min-width: $super-small-page-size) {
     .mat-toolbar {
         justify-content: end;
+    }
+
+    a {
+        font-size: 12px;
     }
 }
 

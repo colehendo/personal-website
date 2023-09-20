@@ -10,6 +10,16 @@ body {
     background-color: $cream;
 }
 
+body {
+    overflow-y: auto;
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;  /* Hide scrollbar for Chrome and Safari */
+}
+
 
 /*
 Font
@@ -70,6 +80,7 @@ Main Pages
     display: flex;
     justify-content: center;
     min-height: 100%;
+    margin-top: 70px;
 }
 
 .main-content > div {
@@ -79,6 +90,11 @@ Main Pages
 
 .page-title {
     margin-bottom: 40px;
+}
+
+.page-right-column {
+    padding-top: 90px;
+    max-width: $column-width;
 }
 
 .dot-separator {
@@ -147,11 +163,6 @@ Selection List
     color: white;
 }
 
-.page-right-column {
-    padding-top: 90px;
-    max-width: $column-width;
-}
-
 
 /*
 Drop Down
@@ -198,10 +209,10 @@ Small Screen
     }
 }
 
-@media (max-width: $medium-page-size) {
+@media (max-width: $medium-page-size) and (min-width: $small-page-size) {
     .main-content {
         display: block;
-        margin-top: 50px;
+        margin: 120px 0 50px 0;
     }
 
     .main-content > div {
@@ -210,7 +221,7 @@ Small Screen
     }
 
     .page-right-column {
-        padding: 30px 0 50px 0;
+        padding-top: 30px;
     }
 
     .icon {
@@ -218,14 +229,18 @@ Small Screen
     }
 }
 
-@media (max-width: $small-page-size) {
+@media (max-width: $small-page-size) and (min-width: $super-small-page-size) {
     .main-content {
         display: block;
-        margin: 50px 35px 50px 35px;
+        margin: 120px 35px 100px 35px;
     }
 
     .main-content > div {
         margin: auto;
+    }
+
+    .page-right-column {
+        padding-top: 30px;
     }
 
     h1 {
@@ -240,7 +255,19 @@ Small Screen
 @media (max-width: $super-small-page-size) {
     .main-content {
         display: block;
-        margin: 50px 35px 50px 35px;
+        margin: 120px 35px 100px 35px;
+    }
+
+    .main-content > div {
+        margin: auto;
+    }
+
+    .page-right-column {
+        padding-top: 30px;
+    }
+
+    .page-items-dropdown-selection {
+        width: 75% !important;
     }
 
     h1 {

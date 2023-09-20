@@ -31,10 +31,13 @@ a {
     color: white;
 }
 
+.icon {
+    padding: 0;
+}
+
 @media (max-width: $super-small-page-size) {
     .icon {
         width: 15px;
         height: 15px;
-        padding-right: 0;
     }
 }
