@@ -16,7 +16,7 @@ import {
   STATEMENT_END,
   STATEMENT_PROJECTS_LIST,
   STATEMENT_START,
-} from 'src/app/constants/home';
+} from 'src/app/data/home';
 
 @Component({
   selector: 'app-home',
@@ -56,7 +56,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
     if (!this.showStatement) {
       setTimeout(() => {
         this.showStatement = true;
-      }, 5000);
+      }, 5500);
     }
   }
 }

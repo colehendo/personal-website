@@ -3,7 +3,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { FADE, PAGE_LOAD_AND_LEAVE } from 'src/app/animations/recommendations';
 import { IRecommendation } from 'src/app/interfaces/recommendations';
-import { RECOMMENDATIONS } from 'src/app/constants/recommendations';
+import { RECOMMENDATIONS } from 'src/app/data/recommendations';
 import { BIG_SCREEN } from 'src/app/constants/screen-sizes';
 
 @Component({

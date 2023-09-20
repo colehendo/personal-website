@@ -3,7 +3,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { FADE, PAGE_LOAD_AND_LEAVE } from 'src/app/animations/projects';
 import { IProject } from 'src/app/interfaces/projects';
-import { PROJECTS } from 'src/app/constants/projects';
+import { PROJECTS } from 'src/app/data/projects';
 import { BIG_SCREEN } from 'src/app/constants/screen-sizes';
 
 @Component({
