@@ -1,11 +1,11 @@
 export const STATEMENT_START = `
 I took my first coding class to fulfill a college math credit. I never looked back.
 
-Ever since, that curiosity has led me on a journey through a variety of disciplines, industries, and interests, with a constant goal of growth.
+Ever since, my journey has led me through a variety of disciplines, industries, and interests, with a constant goal of growth.
 
 What has that journey taught me?
 
-I am driven by passion, curiosity, and quality; planning is more important than execution; and empowering colleagues is the greatest value generator over time. It has also helped me realize my greatest strengths: organization, decisiveness, and communication.
+I am driven by passion, curiosity, and quality; careful planning is essential to good execution; and empowering colleagues is the greatest value generator over time. It has also helped me realize my greatest strengths: organization, decisiveness, and communication.
 
 Additionally, it has let me showcase my skills through a variety of projects`;
 
