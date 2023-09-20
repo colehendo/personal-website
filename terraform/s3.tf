@@ -20,9 +20,9 @@ data "aws_iam_policy_document" "colehendo" {
     }
 
     condition {
-      test = "StringEquals"
+      test     = "StringEquals"
       variable = "AWS:SourceArn"
-      values = [aws_cloudfront_distribution.colehendo.arn]
+      values   = [aws_cloudfront_distribution.colehendo.arn]
     }
 
   }

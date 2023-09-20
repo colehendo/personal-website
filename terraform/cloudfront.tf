@@ -8,7 +8,7 @@ resource "aws_cloudfront_distribution" "colehendo" {
 
   http_version    = "http2and3"
   price_class     = "PriceClass_100"
-  is_ipv6_enabled = true
+  is_ipv6_enabled = false
   web_acl_id      = data.aws_wafv2_web_acl.colehendo.arn
 
   origin {
@@ -27,6 +27,8 @@ resource "aws_cloudfront_distribution" "colehendo" {
     viewer_protocol_policy = "redirect-to-https"
   }
 
+  aliases = ["colehendo.com", "www.colehendo.com"]
+
   restrictions {
     geo_restriction {
       locations        = []
@@ -35,7 +37,9 @@ resource "aws_cloudfront_distribution" "colehendo" {
   }
 
   viewer_certificate {
-    cloudfront_default_certificate = true
+    acm_certificate_arn      = aws_acm_certificate.colehendo_cert.arn
+    ssl_support_method       = "sni-only"
+    minimum_protocol_version = "TLSv1.2_2021"
   }
 }
 
