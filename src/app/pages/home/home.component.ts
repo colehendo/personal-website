@@ -4,8 +4,8 @@ import { CookieService } from 'ngx-cookie-service';
 import {
   FIRST_DESCRIPTOR,
   HI,
-  INTRODUCTION_CORE,
   IM,
+  INTRODUCTION_CORE,
   PAGE_LOAD,
   SECOND_DESCRIPTOR,
   STATEMENT,
