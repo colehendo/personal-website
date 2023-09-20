@@ -45,7 +45,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
 
   ngOnInit() {
     if (!this.cookieService.check(VISITED)) {
-      this.cookieService.set(VISITED, 'true', 1);
+      this.cookieService.set(VISITED, 'true');
     } else {
       this.firstPageLoad = false;
       this.showStatement = true;

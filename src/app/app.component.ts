@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+
+import { VISITED } from './constants/cookies';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'personal-website';
+  constructor(private cookieService: CookieService) {
+    this.cookieService.delete(VISITED);
+  }
 }
