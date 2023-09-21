@@ -76,7 +76,7 @@ Values and variables have been changed to protect company data and privacy.`,
   },
   {
     name: 'Rocks Paper Scissors',
-    link: 'https://github.com/colehendo/rocks-paper-scissors',
+    link: 'https://github.com/colehendo/rock-paper-scissors',
     languages: ['JavaScript', 'HTML', 'CSS'],
     short_description: 'A rocks paper scissors game',
     full_description: `
