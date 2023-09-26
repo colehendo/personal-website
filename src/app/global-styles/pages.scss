@@ -21,14 +21,3 @@
     padding-top: 90px;
     max-width: $column-width;
 }
-
-.descriptor-list {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.descriptor-list > * {
-    margin: 5px;
-}

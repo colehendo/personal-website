@@ -57,6 +57,10 @@ a {
 }
 
 @media (max-width: $super-small-page-size) {
+    .mat-toolbar {
+        justify-content: end;
+    }
+
     a {
         font-size: 12px;
     }

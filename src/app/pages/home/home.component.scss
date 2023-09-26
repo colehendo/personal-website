@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+.main-content > div {
+    text-align: center;
+}
+
 #hi-im {
     display: flex;
 }
@@ -19,6 +23,17 @@
 
 #hi-im-cole-henderson {
     display: inline-block;
+}
+
+.descriptor-list {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.descriptor-list > * {
+    margin: 5px;
 }
 
 .dot-separator {
@@ -57,7 +72,7 @@
     width: 195px;
 }
 
-@media (max-height: '875px') {
+@media (max-height: $short-page-size) {
     #personal-info-statement-container {
         align-items:normal;
     }
@@ -67,7 +82,17 @@
     }
 }
 
-@media (max-width: $small-page-size) {
+@media (max-width: $medium-page-size) and (min-width: $small-page-size) {
+    #personal-info-statement-container {
+        align-items:normal;
+    }
+}
+
+@media (max-width: $small-page-size) and (min-width: $super-small-page-size) {
+    #personal-info-statement-container {
+        align-items:normal;
+    }
+
     h3, .dot-separator {
         font-size: 15px;
     }
@@ -79,6 +104,10 @@
 }
 
 @media (max-width: $super-small-page-size) {
+    #personal-info-statement-container {
+        align-items:normal;
+    }
+
     h3, .dot-separator {
         font-size: 10px;
     }
