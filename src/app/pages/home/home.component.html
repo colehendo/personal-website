@@ -28,17 +28,7 @@
   </div>
   <div @statement *ngIf="showStatement" id="personal-info-statement-container">
     <div id="personal-info-statement">
-      <p class="multiline">{{ statementStart }}</p>
-      <div
-        *ngFor="let project of statementProjectsList"
-        class="personal-info-statement-project"
-      >
-        <span>-</span>
-        <span class="multiline">{{ project }}</span>
-      </div>
-      <p id="personal-info-statement-end" class="multiline">
-        {{ statementEnd }}
-      </p>
+      <p class="multiline">{{ statementContents }}</p>
     </div>
   </div>
 </div>
