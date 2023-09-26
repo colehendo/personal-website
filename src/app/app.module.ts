@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ProjectsComponent } from './pages/projects/projects.component';
+import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { RecommendationsComponent } from './pages/recommendations/recommendations.component';
 import { FooterComponent } from './navigation/footer/footer.component';
 
@@ -16,7 +16,7 @@ import { FooterComponent } from './navigation/footer/footer.component';
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    ProjectsComponent,
+    PortfolioComponent,
     RecommendationsComponent,
     FooterComponent,
   ],

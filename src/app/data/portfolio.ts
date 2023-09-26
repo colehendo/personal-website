@@ -1,6 +1,6 @@
-import { IProject } from '../interfaces/projects';
+import { IProject } from '../interfaces/portfolio';
 
-export const PROJECTS: IProject[] = [
+export const PORTFOLIO: IProject[] = [
   {
     name: 'Smart Signal',
     link: 'https://github.com/colehendo/smart-signal',
