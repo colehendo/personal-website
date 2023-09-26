@@ -1,21 +1,21 @@
 <mat-toolbar>
   <div *ngIf="!screenIsSmall && !screenIsSuperSmall" id="left-top-bar">
-    <div routerLink="">
+    <div routerLink="" class="nav-item">
       <img class="icon" src="/assets/images/home.png" />
       <h3>Home</h3>
     </div>
     <span class="dot-separator">&bull;</span>
-    <div routerLink="portfolio">
+    <div routerLink="portfolio" class="nav-item">
       <img class="icon" src="/assets/images/portfolio.png" />
       <h3>Portfolio</h3>
     </div>
     <span class="dot-separator">&bull;</span>
-    <div routerLink="recommendations">
+    <div routerLink="recommendations" class="nav-item">
       <img class="icon" src="/assets/images/like.png" />
       <h3>Recommendations</h3>
     </div>
     <span class="dot-separator">&bull;</span>
-    <a href="/assets/cole-henderson-resume.pdf"
+    <a href="/assets/cole-henderson-resume.pdf" class="nav-item"
       ><img class="icon" src="/assets/images/user.png" />
       <h3>Resume</h3></a
     >

@@ -12,19 +12,14 @@
 }
 
 .mat-toolbar > * {
-    display: inline-flex;
-    align-items: center;
     padding: 10px;
+    margin: 10px 0 10px 0;
 }
 
-.mat-toolbar > div {
+.nav-item {
     display: block;
     text-align: center;
     font-size: 10px;
-}
-
-.mat-toolbar > div:hover {
-    cursor: pointer;
 }
 
 a {
@@ -36,6 +31,10 @@ a {
 }
 
 @media (max-width: $super-small-page-size) {
+    .mat-toolbar > * {
+        margin: 0;
+    }
+
     .icon {
         width: 15px;
         height: 15px;
