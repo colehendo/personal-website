@@ -50,7 +50,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
     if (!this.showStatement) {
       setTimeout(() => {
         this.showStatement = true;
-      }, 5500);
+      }, 3900);
     }
   }
 }

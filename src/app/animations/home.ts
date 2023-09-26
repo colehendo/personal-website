@@ -33,49 +33,49 @@ export const PAGE_LOAD = trigger('pageLoad', [
 export const HI = trigger('hi', [
   transition(':enter', [
     style({ opacity: 0 }),
-    animate('500ms 500ms', style({ opacity: 1 })),
+    animate('300ms 400ms', style({ opacity: 1 })),
   ]),
 ]);
 
 export const IM = trigger('im', [
   transition(':enter', [
     style({ opacity: 0 }),
-    animate('300ms 1500ms', style({ opacity: 1 })),
+    animate('300ms 1200ms', style({ opacity: 1 })),
   ]),
 ]);
 
 export const INTRODUCTION_CORE = trigger('introductionCore', [
   transition(':enter', [
     style({ opacity: 0 }),
-    animate('400ms 1900ms', style({ opacity: 1 })),
+    animate('300ms 1500ms', style({ opacity: 1 })),
   ]),
 ]);
 
 export const FIRST_DESCRIPTOR = trigger('firstDescriptor', [
   transition(':enter', [
     style({ opacity: 0 }),
-    animate('400ms 3500ms', style({ opacity: 1 })),
+    animate('300ms 2600ms', style({ opacity: 1 })),
   ]),
 ]);
 
 export const SECOND_DESCRIPTOR = trigger('secondDescriptor', [
   transition(':enter', [
     style({ opacity: 0 }),
-    animate('400ms 4100ms', style({ opacity: 1 })),
+    animate('300ms 3000ms', style({ opacity: 1 })),
   ]),
 ]);
 
 export const THIRD_DESCRIPTOR = trigger('thirdDescriptor', [
   transition(':enter', [
     style({ opacity: 0 }),
-    animate('400ms 4700ms', style({ opacity: 1 })),
+    animate('300ms 3400ms', style({ opacity: 1 })),
   ]),
 ]);
 
 export const STATEMENT = trigger('statement', [
   transition(':enter', [
     style({ width: 0, opacity: 0, height: 0 }),
-    animate('400ms', style({ width: '100%', height: '70vh' })),
-    animate('400ms', style({ opacity: 1 })),
+    animate('300ms', style({ width: '100%', height: '70vh' })),
+    animate('200ms', style({ opacity: 1 })),
   ]),
 ]);
