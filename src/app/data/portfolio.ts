@@ -45,20 +45,6 @@ This is a set of ever-expanding practice problems found on websites like LeetCod
 `,
   },
   {
-    name: 'Ticket Self Service Site',
-    link: 'https://github.com/colehendo/ticket-self-service-site',
-    languages: ['JavaScript', 'HTML', 'CSS'],
-    short_description: 'A ticket submission website',
-    full_description: `
-This site is a very early version of a ticket submission and automation website created for a previous employer. Beginning as a simple Slack bot, this site was the second iteration of the project, which moved the configuration into an actual website, therefore allowing for easier backend automation.
-
-The website lets the user manually fill out a ticket for DevOps using dropdowns, input fields, buttons, and logic to control the flow and submission of the form.
-
-The configuration of this website eventually moved away from simple JavaScript and into a full scale Angular web app with a complex API layer and a Python backend running on Jenkins. That final state is still in use by my previous employer, and currently supports over 75 complex actions, automating an average of over 2 daily tickets per employee.
-
-Most of the values and text has been altered to ensure company and data privacy.`,
-  },
-  {
     name: 'Slack Bot',
     link: 'https://github.com/colehendo/ticket-handling-slack-bot',
     languages: ['Python'],
@@ -73,26 +59,5 @@ This bot however was the first small step on a long road of fully automating all
 The code is lacking in organization, and would dramatically benefit from abstractions which could make it easily extendable. However, this code continues to serve as a reminder of how far my code's quality has come since I began programming.
 
 Values and variables have been changed to protect company data and privacy.`,
-  },
-  {
-    name: 'Rocks Paper Scissors',
-    link: 'https://github.com/colehendo/rock-paper-scissors',
-    languages: ['JavaScript', 'HTML', 'CSS'],
-    short_description: 'A rocks paper scissors game',
-    full_description: `
-This is a simple rock paper scissors game written in JavaScript, HTML, and CSS summer of 2017.
-
-It was written as a homework for a Front-End Web Development class taken at General Assembly, and has not been updated since submission of the assignment.
-`,
-  },
-  {
-    name: 'Sports Trivia',
-    link: 'https://github.com/colehendo/sports-trivia',
-    languages: ['JavaScript', 'HTML', 'CSS'],
-    short_description: 'A simple sports trivia site',
-    full_description: `
-This sports trivia web app was my final project for a Front-End Web Development course at General Assembly. Written in JavaScript, HTML, and CSS during summer of 2017, it was one of the first larger-scale projects I created, and has not been updated since its submission. It is the perfect candidate for a basic database to support it, although that was not in my abilities at the time of creation.
-
-PSA: The trivia has not been updated since summer of 2017, making some previously correct answers now incorrect.`,
   },
 ];
