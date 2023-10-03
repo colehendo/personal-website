@@ -12,6 +12,14 @@ Smart Signal was created as a price prediction platform, with the core intention
 The application ingests historical prices for several cryptocurrencies, and based on a set of indicators, makes future price predictions. Although the solution did not present the results we had hoped for due to a severe lack of math and data engineering, the software worked exactly as intended, allowing us to seamlessly ingest prices and make real-time decisions based on changes seen. Furthermore, the web UI provided a robust visualization of these changes, allowing manual decisions to be made as well.`,
   },
   {
+    name: 'Rhyme Detector',
+    link: 'https://github.com/colehendo/rhyme-detector',
+    languages: ['Python', 'Terraform'],
+    short_description: 'Rhyme detection and visualization tool',
+    full_description: `
+This detects rhymes within song lyrics and creates a colored output for easy visualization. It is an early version of a project set to involve audio processing.`,
+  },
+  {
     name: 'Click Counter',
     link: 'https://github.com/colehendo/click-counter',
     languages: ['Python'],
