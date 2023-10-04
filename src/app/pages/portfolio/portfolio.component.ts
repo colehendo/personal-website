@@ -1,5 +1,5 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { FADE, PAGE_LOAD_AND_LEAVE } from 'src/app/animations/pages';
 import { IProject } from 'src/app/interfaces/portfolio';
@@ -10,7 +10,6 @@ import { BIG_SCREEN } from 'src/app/constants/screen-sizes';
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],
-  encapsulation: ViewEncapsulation.None,
   animations: [PAGE_LOAD_AND_LEAVE, FADE],
 })
 export class PortfolioComponent implements OnInit {
