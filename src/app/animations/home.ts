@@ -75,7 +75,7 @@ export const THIRD_DESCRIPTOR = trigger('thirdDescriptor', [
 export const STATEMENT = trigger('statement', [
   transition(':enter', [
     style({ width: 0, opacity: 0, height: 0 }),
-    animate('300ms', style({ width: '100%', height: '70vh' })),
+    animate('300ms', style({ width: '100%', height: 'auto' })),
     animate('200ms', style({ opacity: 1 })),
   ]),
 ]);
