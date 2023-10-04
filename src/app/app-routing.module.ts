@@ -9,8 +9,8 @@ import { SkillsComponent } from './pages/skills/skills.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: '*', component: HomeComponent },
-  { path: 'portfolio', component: PortfolioComponent },
   { path: 'skills', component: SkillsComponent },
+  { path: 'portfolio', component: PortfolioComponent },
   { path: 'recommendations', component: RecommendationsComponent },
 ];
 
