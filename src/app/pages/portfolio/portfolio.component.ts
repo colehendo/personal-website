@@ -1,7 +1,7 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
-import { FADE, PAGE_LOAD_AND_LEAVE } from 'src/app/animations/portfolio';
+import { FADE, PAGE_LOAD_AND_LEAVE } from 'src/app/animations/pages';
 import { IProject } from 'src/app/interfaces/portfolio';
 import { PORTFOLIO } from 'src/app/data/portfolio';
 import { BIG_SCREEN } from 'src/app/constants/screen-sizes';

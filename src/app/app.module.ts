@@ -9,8 +9,8 @@ import { HeaderComponent } from './navigation/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { RecommendationsComponent } from './pages/recommendations/recommendations.component';
+import { SkillsComponent } from './pages/skills/skills.component';
 import { FooterComponent } from './navigation/footer/footer.component';
-import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +19,8 @@ import { SkillsComponent } from './skills/skills.component';
     HomeComponent,
     PortfolioComponent,
     RecommendationsComponent,
-    FooterComponent,
     SkillsComponent,
+    FooterComponent,
   ],
   imports: [AppRoutingModule, SharedModule],
   providers: [CookieService],

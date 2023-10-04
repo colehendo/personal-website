@@ -1,0 +1,29 @@
+<div @pageLoadAndLeave class="main-content">
+  <div>
+    <h2 class="page-title">Skills</h2>
+    <div>
+      <h2 class="section-title">Languages</h2>
+      <div *ngFor="let language of languages">
+        <h3>{{ language.name }}</h3>
+        <div class="bar-container">
+          <div
+            [ngStyle]="{ width: language.experience * 10 + '%' }"
+            class="bar"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-right-column">
+    <h2 class="section-title">Tools</h2>
+    <div *ngFor="let tool of tools">
+      <h3>{{ tool.name }}</h3>
+      <div class="bar-container">
+        <div
+          [ngStyle]="{ width: tool.experience * 10 + '%' }"
+          class="bar"
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>

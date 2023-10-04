@@ -10,6 +10,11 @@
       <h3>Portfolio</h3>
     </div>
     <span class="dot-separator">&bull;</span>
+    <div routerLink="skills" class="nav-item">
+      <img class="icon" src="/assets/images/skills.png" />
+      <h3 *ngIf="!screenIsSuperSmall">Skills</h3>
+    </div>
+    <span class="dot-separator">&bull;</span>
     <div routerLink="recommendations" class="nav-item">
       <img class="icon" src="/assets/images/like.png" />
       <h3>Recommendations</h3>

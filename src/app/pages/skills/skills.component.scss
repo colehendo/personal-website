@@ -1,0 +1,29 @@
+@import 'src/app/global-styles/constants.scss';
+
+h3 {
+    margin-bottom: 5px;
+}
+
+.main-content > div {
+    width: $column-width;
+}
+
+.section-title {
+    font-size: 35px;
+}
+
+.page-right-column > .section-title {
+    margin-top: 17px;
+}
+
+.bar-container {
+    height: 20px;
+    width: 100%;
+    border: 5px solid $dark-green;
+    border-radius: 10px;
+}
+
+.bar {
+    height: 20px;
+    background-color: $dark-green;
+}
