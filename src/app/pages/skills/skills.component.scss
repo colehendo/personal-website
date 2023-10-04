@@ -27,3 +27,9 @@ h3 {
     height: 20px;
     background-color: $dark-green;
 }
+
+@media (max-width: $small-page-size) {
+    .main-content > div {
+        width: 80%;
+    }
+}
