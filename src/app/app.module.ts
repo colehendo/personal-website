@@ -10,6 +10,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { RecommendationsComponent } from './pages/recommendations/recommendations.component';
 import { FooterComponent } from './navigation/footer/footer.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FooterComponent } from './navigation/footer/footer.component';
     PortfolioComponent,
     RecommendationsComponent,
     FooterComponent,
+    SkillsComponent,
   ],
   imports: [AppRoutingModule, SharedModule],
   providers: [CookieService],
