@@ -19,13 +19,14 @@ h3 {
 .bar-container {
     height: 20px;
     width: 100%;
-    border: 5px solid $dark-green;
+    border: 5px solid $navy;
     border-radius: 10px;
 }
 
 .bar {
     height: 20px;
     background-color: $dark-green;
+    border-radius: 4px 0 0 4px;
 }
 
 @media (max-width: $small-page-size) {
