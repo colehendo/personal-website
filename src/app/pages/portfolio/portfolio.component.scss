@@ -21,6 +21,15 @@
     padding-left: 10px;
 }
 
+.full-description {
+    display: inline-flex;
+    margin-bottom: 10px;
+}
+
+.full-description > p {
+    margin: 10px 0 0 5px;
+}
+
 h4 {
     color: $dark-green;
     margin: 0;

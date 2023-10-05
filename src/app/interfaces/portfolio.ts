@@ -3,5 +3,5 @@ export interface IProject {
   link: string;
   languages: string[];
   short_description: string;
-  full_description: string;
+  full_description: string[];
 }

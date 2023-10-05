@@ -47,8 +47,9 @@
         /></a>
       </div>
     </div>
-    <p class="multiline">
-      {{ selectedProject.full_description }}
-    </p>
+    <div *ngFor="let bullet of selectedProject.full_description" class="full-description">
+      <span class="dot-separator">&bull;</span>
+      <p>{{ bullet }}</p>
+    </div>
   </div>
 </div>
