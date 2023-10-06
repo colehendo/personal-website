@@ -15,9 +15,16 @@
         </mat-option>
       </mat-select>
     </div>
-    <div *ngIf="screenIsBig">
+    <div
+      *ngIf="screenIsBig"
+      class="page-list-items"
+      [ngClass]="{
+      'fade-bottom-of-page-list-items': showAllRecommendations && !recommendationCountLow,
+    }"
+    >
       <div *ngFor="let recommendation of recommendations; let index = index">
         <div
+          *ngIf="index <= recommendationCountToShow || showAllRecommendations"
           class="page-list-item"
           [ngClass]="{
             'not-selected-page-list-item': selectedRecommendationID !== index,
@@ -30,6 +37,12 @@
         </div>
       </div>
     </div>
+    <span
+      *ngIf="screenIsBig && !showAllRecommendations"
+      class="show-more non-page-list-items"
+      (click)="toggleShowAllRecommendations()"
+      >Show more &#8595;</span
+    >
   </div>
   <div [@fade]="showRecommendation" class="page-right-column">
     <img class="logo" src="/assets/images/quote.png" />

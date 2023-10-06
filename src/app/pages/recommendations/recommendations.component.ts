@@ -16,6 +16,7 @@ export class RecommendationsComponent implements OnInit {
   constructor(private breakpointObserver: BreakpointObserver) {}
 
   ngOnInit() {
+    this.countProjectsToList();
     this.watchScreenSize();
   }
 
@@ -24,6 +25,9 @@ export class RecommendationsComponent implements OnInit {
   selectedRecommendation: IRecommendation =
     this.recommendations[this.selectedRecommendationID];
 
+  recommendationCountToShow: number = 0;
+  showAllRecommendations: boolean = false;
+  recommendationCountLow: boolean = false;
   showRecommendation: boolean = true;
   screenIsBig: boolean = true;
 
@@ -35,6 +39,28 @@ export class RecommendationsComponent implements OnInit {
       this.selectedRecommendation = this.recommendations[recommendationID];
       this.showRecommendation = true;
     }, 200);
+  }
+
+  toggleShowAllRecommendations() {
+    this.showAllRecommendations = true;
+  }
+
+  private countProjectsToList() {
+    const height = window.innerHeight;
+    // Project list takes up 50% of window height
+    const projectListHeight = Math.ceil(height * 0.5);
+    // Rough estimate on the number of pixels an item comprises
+    const projectItemHeight = 100;
+    const projectItemCount = this.recommendations.length;
+
+    this.recommendationCountToShow = Math.floor(
+      projectListHeight / projectItemHeight
+    );
+
+    if (projectItemCount < this.recommendationCountToShow) {
+      this.showAllRecommendations = true;
+      this.recommendationCountLow = true;
+    }
   }
 
   private watchScreenSize() {

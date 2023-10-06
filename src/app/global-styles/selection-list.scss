@@ -2,17 +2,20 @@
 
 
 .page-list-items {
-    max-height: 55vh;
+    max-height: 65vh;
     overflow-y: auto;
     -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
     scrollbar-width: none;  /* Hide scrollbar for Firefox */
 
-    mask-image: linear-gradient(white 85%, transparent);
-    padding-bottom: 60px;
+    padding-bottom: 10px;
 }
 
 .page-list-items::-webkit-scrollbar {
     display: none;  /* Hide scrollbar for Chrome and Safari */
+}
+
+.fade-bottom-of-page-list-items {
+    mask-image: linear-gradient(white 85%, transparent);
 }
 
 .page-list-item {

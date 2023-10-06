@@ -1,6 +1,6 @@
 <div @pageLoadAndLeave class="main-content">
   <div>
-    <h2 class="page-title">Portfolio</h2>
+    <h2 class="page-title non-page-list-items">Portfolio</h2>
     <div *ngIf="!screenIsBig">
       <mat-select
         class="page-items-dropdown-selection"
@@ -12,22 +12,36 @@
         </mat-option>
       </mat-select>
     </div>
-    <div *ngIf="screenIsBig" class="page-list-items">
-      <div
-        *ngFor="let project of portfolio; let index = index"
-        class="page-list-item"
-        [ngClass]="{
-          'not-selected-page-list-item': selectedProjectID !== index,
-          'selected-page-list-item': selectedProjectID === index
-        }"
-        (click)="selectProject(index)"
-      >
-        <h3>{{ project.name }}</h3>
-        <p>
-          {{ project.short_description }}
-        </p>
+    <div
+      *ngIf="screenIsBig"
+      class="page-list-items"
+      [ngClass]="{
+        'fade-bottom-of-page-list-items': showAllProjects && !projectCountLow,
+      }"
+    >
+      <div *ngFor="let project of portfolio; let index = index">
+        <div
+          *ngIf="index <= projectCountToShow || showAllProjects"
+          class="page-list-item"
+          [ngClass]="{
+            'not-selected-page-list-item': selectedProjectID !== index,
+            'selected-page-list-item': selectedProjectID === index
+          }"
+          (click)="selectProject(index)"
+        >
+          <h3>{{ project.name }}</h3>
+          <p>
+            {{ project.short_description }}
+          </p>
+        </div>
       </div>
     </div>
+    <span
+      *ngIf="screenIsBig && !showAllProjects"
+      class="show-more non-page-list-items"
+      (click)="toggleShowAllProjects()"
+      >Show more &#8595;</span
+    >
   </div>
   <div [@fade]="showProject" class="page-right-column">
     <div id="project-header">
@@ -47,7 +61,10 @@
         /></a>
       </div>
     </div>
-    <div *ngFor="let bullet of selectedProject.full_description" class="full-description">
+    <div
+      *ngFor="let bullet of selectedProject.full_description"
+      class="full-description"
+    >
       <span class="dot-separator">&bull;</span>
       <p>{{ bullet }}</p>
     </div>
