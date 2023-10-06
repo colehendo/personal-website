@@ -19,7 +19,7 @@ export const PORTFOLIO: IProject[] = [
     short_description: 'Rhyme detection and visualization tool',
     full_description: [
       'Song lyrics are ingested, a rhyme scheme is detected, and the highlighted scheme is subsequently outputted',
-      'It is an early version of a project set to involve audio processing',
+      'A future iteration of this project will process audio instead of text for more accurate rhyme detection',
     ],
   },
   {
@@ -29,9 +29,9 @@ export const PORTFOLIO: IProject[] = [
     short_description: 'Short link click couter and decryptor',
     full_description: [
       'Code to count the number of clicks to a specific set of encoded short links in a given year',
-      'A sorted list of unencoded URLs and their associated click counts is outputted',
+      'A sorted list of decoded URLs and their associated click counts is outputted',
       'This provides a good example of proper object oriented organization, testing, and well documented and readable code',
-      'There are a number of flexibility and extensibility features which were not added to not over-architect the solution and keep it simple',
+      'There are a number of flexibility and extensibility features which were not added as to not over-architect the solution and keep it simple',
     ],
   },
   {
@@ -40,7 +40,7 @@ export const PORTFOLIO: IProject[] = [
     languages: ['Angular', 'Terraform'],
     short_description: 'This website',
     full_description: [
-      'This is a personal website used to display my skills, portfolio, recommendations, resume, contact information, and a personal summary',
+      'This is my personal website used to display my skills, portfolio, recommendations, resume, contact information, and a personal summary',
       'The code behind the site displays proper use of modularization, organization, and use of compact files',
     ],
   },
@@ -51,7 +51,7 @@ export const PORTFOLIO: IProject[] = [
     short_description: 'Infrastructure creation and management templates',
     full_description: [
       'A set of examples of provisioning and deprovisioning infrastructure',
-      'These examples will be leveraged when building components in the future to shorten development time',
+      'These examples will be leveraged when building future components to shorten development time',
     ],
   },
   {
@@ -60,8 +60,7 @@ export const PORTFOLIO: IProject[] = [
     languages: ['Python'],
     short_description: 'A set of practice problems and solutions',
     full_description: [
-      'This is a set of ever-expanding practice problems found on websites like LeetCode and HackerRank, along with my solution to each of the problems',
-      'Currently, the solutions are only in Python, although I plan to expand beyond that as I dive deeper into other languages',
+      'This is a set of ever-expanding backend practice problems, along with my solution to each of the problems',
     ],
   },
   {
@@ -70,9 +69,8 @@ export const PORTFOLIO: IProject[] = [
     languages: ['Python'],
     short_description: 'A ticket submission Slack bot',
     full_description: [
-      'This Slack bot was the first iteration of an automated ticket handling product created for a previous employer',
+      'This deprecated Slack bot was the first iteration of an automated ticket handling product created for a previous employer',
       'The user could select from a handful of different options, spanning from stack creation, to data migration, to account creation, resulting in a Jira ticket being filed with our DevOps team.',
-      'Values and variables have been changed to protect company data and privacy',
     ],
   },
 ];
