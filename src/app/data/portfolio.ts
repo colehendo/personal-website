@@ -7,9 +7,9 @@ export const PORTFOLIO: IProject[] = [
     languages: ['Python', 'Angular', 'Serverless'],
     short_description: 'Cryptocurrency tracking and prediction tool',
     full_description: [
-      'A price prediction platform created to display aptitude for both frontend and backend coding, as well as cloud infrastructure knowledge and applicability',
-      'The application ingests both historical and real-time prices for several cryptocurrencies, and based on a set of indicators, makes future price predictions',
-      'The web UI provides a robust visualization of these changes, allowing manual decisions to be made',
+      'A price prediction platform, which ingests historical and real-time asset prices, and based on a set of indicators, predicts future prices',
+      'Manual decisions can be made through the robust UI, while the backend is leveraged for automated ones',
+      'The platform was created to display aptitude for both frontend and backend coding, as well as cloud infrastructure knowledge and applicability',
     ],
   },
   {
