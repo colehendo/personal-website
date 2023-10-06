@@ -4,7 +4,10 @@
     <div>
       <h2 class="section-title">Languages</h2>
       <div *ngFor="let language of languages">
-        <h3>{{ language.name }}</h3>
+        <div class="skill-name">
+          <h3>{{ language.name }}:</h3>
+          <span>{{ skillLevel(language.experience) }}</span>
+        </div>
         <div class="bar-container">
           <div
             [ngStyle]="{ width: language.experience * 10 + '%' }"
@@ -17,7 +20,10 @@
   <div class="page-right-column">
     <h2 class="section-title">Tools</h2>
     <div *ngFor="let tool of tools">
-      <h3>{{ tool.name }}</h3>
+      <div class="skill-name">
+        <h3>{{ tool.name }}:</h3>
+        <span>{{ skillLevel(tool.experience) }}</span>
+      </div>
       <div class="bar-container">
         <div
           [ngStyle]="{ width: tool.experience * 10 + '%' }"

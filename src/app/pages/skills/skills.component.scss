@@ -12,6 +12,15 @@ h3 {
     font-size: 35px;
 }
 
+.skill-name {
+    display: inline-flex;
+    align-items: baseline;
+}
+
+.skill-name > * {
+    margin-right: 5px;
+}
+
 .page-right-column > .section-title {
     margin-top: 17px;
 }

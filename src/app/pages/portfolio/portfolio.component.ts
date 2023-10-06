@@ -46,16 +46,13 @@ export class PortfolioComponent implements OnInit {
 
   private countProjectsToList() {
     const height = window.innerHeight;
-    console.log(height)
     // Project list takes up 50% of window height
     const projectListHeight = Math.ceil(height * 0.5);
     // Rough estimate on the number of pixels an item comprises
     const projectItemHeight = 100;
     const projectItemCount = this.portfolio.length;
 
-    this.projectCountToShow = Math.floor(
-      projectListHeight / projectItemHeight
-    );
+    this.projectCountToShow = Math.floor(projectListHeight / projectItemHeight);
 
     if (projectItemCount < this.projectCountToShow) {
       this.showAllProjects = true;
