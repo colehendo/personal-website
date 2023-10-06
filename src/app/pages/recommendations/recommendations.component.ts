@@ -1,10 +1,13 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { FADE, PAGE_LOAD_AND_LEAVE } from 'src/app/animations/pages';
 import { IRecommendation } from 'src/app/interfaces/recommendations';
 import { RECOMMENDATIONS } from 'src/app/data/recommendations';
 import { BIG_SCREEN } from 'src/app/constants/screen-sizes';
+
+const RECOMMENDATION_PARAM_KEY = 'recommendationID';
 
 @Component({
   selector: 'app-recommendations',
@@ -13,17 +16,21 @@ import { BIG_SCREEN } from 'src/app/constants/screen-sizes';
   animations: [PAGE_LOAD_AND_LEAVE, FADE],
 })
 export class RecommendationsComponent implements OnInit {
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit() {
+    this.selectInitialRecommendation();
     this.countProjectsToList();
     this.watchScreenSize();
   }
 
   recommendations: IRecommendation[] = RECOMMENDATIONS;
-  selectedRecommendationID: number = 0;
-  selectedRecommendation: IRecommendation =
-    this.recommendations[this.selectedRecommendationID];
+  selectedRecommendationID: number;
+  selectedRecommendation: IRecommendation;
 
   recommendationCountToShow: number = 0;
   showAllRecommendations: boolean = false;
@@ -39,10 +46,36 @@ export class RecommendationsComponent implements OnInit {
       this.selectedRecommendation = this.recommendations[recommendationID];
       this.showRecommendation = true;
     }, 200);
+
+    this.addRecommendationToPath(recommendationID);
+  }
+
+  addRecommendationToPath(recommendationID: number) {
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: {
+        [RECOMMENDATION_PARAM_KEY]: recommendationID,
+      },
+    });
   }
 
   toggleShowAllRecommendations() {
     this.showAllRecommendations = true;
+  }
+
+  private selectInitialRecommendation() {
+    const queryParams = this.route.snapshot.queryParams;
+
+    if (
+      RECOMMENDATION_PARAM_KEY in queryParams &&
+      Number(queryParams[RECOMMENDATION_PARAM_KEY])
+    ) {
+      this.selectedRecommendationID = Number(queryParams[RECOMMENDATION_PARAM_KEY]);
+    } else {
+      this.selectedRecommendationID = 0;
+    }
+
+    this.selectedRecommendation = this.recommendations[this.selectedRecommendationID];
   }
 
   private countProjectsToList() {

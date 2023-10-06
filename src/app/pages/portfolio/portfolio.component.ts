@@ -1,10 +1,13 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { FADE, PAGE_LOAD_AND_LEAVE } from 'src/app/animations/pages';
 import { IProject } from 'src/app/interfaces/portfolio';
 import { PORTFOLIO } from 'src/app/data/portfolio';
 import { BIG_SCREEN } from 'src/app/constants/screen-sizes';
+
+const PROJECT_PARAM_KEY = 'projectID';
 
 @Component({
   selector: 'app-portfolio',
@@ -13,16 +16,21 @@ import { BIG_SCREEN } from 'src/app/constants/screen-sizes';
   animations: [PAGE_LOAD_AND_LEAVE, FADE],
 })
 export class PortfolioComponent implements OnInit {
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit() {
+    this.selectInitialProject();
     this.countProjectsToList();
     this.watchScreenSize();
   }
 
   portfolio: IProject[] = PORTFOLIO;
-  selectedProjectID: number = 0;
-  selectedProject: IProject = this.portfolio[this.selectedProjectID];
+  selectedProjectID: number;
+  selectedProject: IProject;
 
   projectCountToShow: number = 0;
   showAllProjects: boolean = false;
@@ -38,10 +46,36 @@ export class PortfolioComponent implements OnInit {
       this.selectedProject = this.portfolio[projectID];
       this.showProject = true;
     }, 200);
+
+    this.addProjectToPath(projectID);
+  }
+
+  addProjectToPath(projectID: number) {
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: {
+        [PROJECT_PARAM_KEY]: projectID,
+      },
+    });
   }
 
   toggleShowAllProjects() {
     this.showAllProjects = true;
+  }
+
+  private selectInitialProject() {
+    const queryParams = this.route.snapshot.queryParams;
+
+    if (
+      PROJECT_PARAM_KEY in queryParams &&
+      Number(queryParams[PROJECT_PARAM_KEY])
+    ) {
+      this.selectedProjectID = Number(queryParams[PROJECT_PARAM_KEY]);
+    } else {
+      this.selectedProjectID = 0;
+    }
+
+    this.selectedProject = this.portfolio[this.selectedProjectID];
   }
 
   private countProjectsToList() {
