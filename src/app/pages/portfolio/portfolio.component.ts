@@ -1,11 +1,11 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
 
 import { FADE, PAGE_LOAD_AND_LEAVE } from 'src/app/animations/pages';
-import { IProject } from 'src/app/interfaces/portfolio';
-import { PORTFOLIO } from 'src/app/data/portfolio';
 import { BIG_SCREEN } from 'src/app/constants/screen-sizes';
+import { PORTFOLIO } from 'src/app/data/portfolio';
+import { IProject } from 'src/app/interfaces/portfolio';
+import { SelectionListService } from 'src/app/services/selection-list.service';
 
 const PROJECT_PARAM_KEY = 'projectID';
 
@@ -18,8 +18,7 @@ const PROJECT_PARAM_KEY = 'projectID';
 export class PortfolioComponent implements OnInit {
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private route: ActivatedRoute,
-    private router: Router
+    private selectionListService: SelectionListService
   ) {}
 
   ngOnInit() {
@@ -51,12 +50,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   addProjectToPath(projectID: number) {
-    this.router.navigate([], {
-      relativeTo: this.route,
-      queryParams: {
-        [PROJECT_PARAM_KEY]: projectID,
-      },
-    });
+    this.selectionListService.addListItemToPath(projectID, PROJECT_PARAM_KEY);
   }
 
   toggleShowAllProjects() {
@@ -64,31 +58,15 @@ export class PortfolioComponent implements OnInit {
   }
 
   private selectInitialProject() {
-    const queryParams = this.route.snapshot.queryParams;
-
-    if (
-      PROJECT_PARAM_KEY in queryParams &&
-      Number(queryParams[PROJECT_PARAM_KEY])
-    ) {
-      this.selectedProjectID = Number(queryParams[PROJECT_PARAM_KEY]);
-    } else {
-      this.selectedProjectID = 0;
-    }
-
+    this.selectedProjectID =
+      this.selectionListService.selectInitialListItem(PROJECT_PARAM_KEY);
     this.selectedProject = this.portfolio[this.selectedProjectID];
   }
 
   private countProjectsToList() {
-    const height = window.innerHeight;
-    // Project list takes up 50% of window height
-    const projectListHeight = Math.ceil(height * 0.5);
-    // Rough estimate on the number of pixels an item comprises
-    const projectItemHeight = 100;
-    const projectItemCount = this.portfolio.length;
+    this.projectCountToShow = this.selectionListService.countListItemsToShow();
 
-    this.projectCountToShow = Math.floor(projectListHeight / projectItemHeight);
-
-    if (projectItemCount < this.projectCountToShow) {
+    if (this.portfolio.length < this.projectCountToShow) {
       this.showAllProjects = true;
       this.projectCountLow = true;
     }
