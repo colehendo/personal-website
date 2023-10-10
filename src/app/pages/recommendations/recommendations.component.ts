@@ -38,6 +38,10 @@ export class RecommendationsComponent implements OnInit {
   screenIsBig: boolean = true;
 
   selectRecommendation(recommendationID: number) {
+    if (recommendationID === this.selectedRecommendationID) {
+      return;
+    }
+
     this.showRecommendation = false;
     this.selectedRecommendationID = recommendationID;
 

@@ -27,13 +27,30 @@ export class SelectionListService {
   }
 
   countListItemsToShow() {
-    const height = window.innerHeight;
-    // Item list takes up 50% of window height
-    const listHeight = Math.ceil(height * 0.5);
     // Rough estimate on the number of pixels an item comprises
     const itemHeight = 100;
-    const countToShow = Math.floor(listHeight / itemHeight);
+    const windowHeight = window.innerHeight;
+    const listMaxPercentPageHeight =
+      this.getListMaxPercentPageHeight(windowHeight);
+    const listHeight = Math.ceil(windowHeight * listMaxPercentPageHeight);
+    const countToShow = Math.ceil(listHeight / itemHeight);
 
     return countToShow;
+  }
+
+  // Determine the maximum percentage of the
+  // page's height the list can consume
+  private getListMaxPercentPageHeight(windowHeight: number) {
+    // Case switch would be nicer here aesthetically,
+    // but is dramatically slower in performance
+    if (windowHeight > 700) {
+      return 0.5;
+    } else if (windowHeight > 600) {
+      return 0.4;
+    } else if (windowHeight > 450) {
+      return 0.3;
+    } else {
+      return 0.2;
+    }
   }
 }

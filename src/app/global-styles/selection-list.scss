@@ -1,7 +1,7 @@
 @import 'src/app/global-styles/constants.scss';
 
 
-.page-list-items {
+.selection-list-items {
     max-height: 65vh;
     overflow-y: auto;
     -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
@@ -10,15 +10,23 @@
     padding-bottom: 10px;
 }
 
-.page-list-items::-webkit-scrollbar {
+.selection-list-items::-webkit-scrollbar {
     display: none;  /* Hide scrollbar for Chrome and Safari */
 }
 
-.fade-bottom-of-page-list-items {
+.fade-bottom-of-selection-list-items {
     mask-image: linear-gradient(white 85%, transparent);
 }
 
-.page-list-item {
+.non-selection-list-items {
+    padding-left: 12px;
+}
+
+.show-more:hover {
+    cursor: pointer;
+}
+
+.selection-list-item {
     margin-bottom: 20px;
     padding: 10px;
     border: 3px solid $dark-green;
@@ -28,24 +36,24 @@
         color 0.2s;
 }
 
-.page-list-item > * {
+.selection-list-item > * {
     margin: 0;
 }
 
-.page-list-item:hover {
+.selection-list-item:hover {
     cursor: pointer;
 }
 
-.selected-page-list-item {
+.selected-selection-list-item {
     background-color: $dark-green;
     color: white;
 }
 
-.selected-page-list-item:hover {
+.selected-selection-list-item:hover {
     cursor: pointer;
 }
 
-.not-selected-page-list-item:hover {
+.not-selected-selection-list-item:hover {
     background-color: $medium-green;
     color: white;
 }

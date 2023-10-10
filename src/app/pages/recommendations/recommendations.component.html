@@ -1,6 +1,6 @@
 <div @fade-in class="main-content">
   <div>
-    <h2 class="page-title non-page-list-items">Recommendations</h2>
+    <h2 class="page-title non-selection-list-items">Recommendations</h2>
     <div *ngIf="!screenIsBig">
       <mat-select
         class="page-items-dropdown-selection"
@@ -17,19 +17,20 @@
     </div>
     <div
       *ngIf="screenIsBig"
-      class="page-list-items"
+      class="selection-list-items"
       [ngClass]="{
-      'fade-bottom-of-page-list-items': showAllRecommendations && !recommendationCountLow,
+      'fade-bottom-of-selection-list-items': showAllRecommendations && !recommendationCountLow,
     }"
     >
       <div *ngFor="let recommendation of recommendations; let index = index">
         <div
           @fade-in
           *ngIf="index <= recommendationCountToShow || showAllRecommendations"
-          class="page-list-item"
+          class="selection-list-item"
           [ngClass]="{
-            'not-selected-page-list-item': selectedRecommendationID !== index,
-            'selected-page-list-item': selectedRecommendationID === index
+            'not-selected-selection-list-item':
+              selectedRecommendationID !== index,
+            'selected-selection-list-item': selectedRecommendationID === index
           }"
           (click)="selectRecommendation(index)"
         >
@@ -40,7 +41,7 @@
     </div>
     <span
       *ngIf="screenIsBig && !showAllRecommendations"
-      class="show-more non-page-list-items"
+      class="show-more non-selection-list-items"
       (click)="toggleShowAllRecommendations()"
       >Show more &#8595;</span
     >

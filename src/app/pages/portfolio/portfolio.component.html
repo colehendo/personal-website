@@ -1,6 +1,6 @@
 <div @fade-in class="main-content">
   <div>
-    <h2 class="page-title non-page-list-items">Portfolio</h2>
+    <h2 class="page-title non-selection-list-items">Portfolio</h2>
     <div *ngIf="!screenIsBig">
       <mat-select
         class="page-items-dropdown-selection"
@@ -14,19 +14,19 @@
     </div>
     <div
       *ngIf="screenIsBig"
-      class="page-list-items"
+      class="selection-list-items"
       [ngClass]="{
-        'fade-bottom-of-page-list-items': showAllProjects && !projectCountLow,
+        'fade-bottom-of-selection-list-items': showAllProjects && !projectCountLow,
       }"
     >
       <div *ngFor="let project of portfolio; let index = index">
         <div
           @fade-in
           *ngIf="index <= projectCountToShow || showAllProjects"
-          class="page-list-item"
+          class="selection-list-item"
           [ngClass]="{
-            'not-selected-page-list-item': selectedProjectID !== index,
-            'selected-page-list-item': selectedProjectID === index
+            'not-selected-selection-list-item': selectedProjectID !== index,
+            'selected-selection-list-item': selectedProjectID === index
           }"
           (click)="selectProject(index)"
         >
@@ -37,12 +37,14 @@
         </div>
       </div>
     </div>
-    <span
-      *ngIf="screenIsBig && !showAllProjects"
-      class="show-more non-page-list-items"
-      (click)="toggleShowAllProjects()"
-      >Show more &#8595;</span
-    >
+    <div>
+      <span
+        *ngIf="screenIsBig && !showAllProjects"
+        class="show-more non-selection-list-items"
+        (click)="toggleShowAllProjects()"
+        >Show more &#8595;</span
+      >
+    </div>
   </div>
   <div [@fade-in]="showProject" class="page-right-column">
     <div id="project-header">

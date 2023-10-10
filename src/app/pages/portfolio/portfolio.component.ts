@@ -38,6 +38,10 @@ export class PortfolioComponent implements OnInit {
   screenIsBig: boolean = true;
 
   selectProject(projectID: number) {
+    if (projectID === this.selectedProjectID) {
+      return;
+    }
+    
     this.showProject = false;
     this.selectedProjectID = projectID;
 
