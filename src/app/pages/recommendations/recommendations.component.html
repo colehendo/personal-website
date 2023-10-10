@@ -1,4 +1,4 @@
-<div @pageLoadAndLeave class="main-content">
+<div @fade-in class="main-content">
   <div>
     <h2 class="page-title non-page-list-items">Recommendations</h2>
     <div *ngIf="!screenIsBig">
@@ -24,6 +24,7 @@
     >
       <div *ngFor="let recommendation of recommendations; let index = index">
         <div
+          @fade-in
           *ngIf="index <= recommendationCountToShow || showAllRecommendations"
           class="page-list-item"
           [ngClass]="{
@@ -44,7 +45,7 @@
       >Show more &#8595;</span
     >
   </div>
-  <div [@fade]="showRecommendation" class="page-right-column">
+  <div [@fade-in]="showRecommendation" class="page-right-column">
     <img class="logo" src="/assets/images/quote.png" />
     <p class="multiline">
       {{ selectedRecommendation.recommendation }}
@@ -59,7 +60,9 @@
         <span>{{ selectedRecommendation.relation }}</span>
       </div>
       <a [href]="selectedRecommendation.linkedin"
-        ><img class="logo navy-logo linkedin-logo" src="/assets/images/linkedin-navy.png"
+        ><img
+          class="logo navy-logo linkedin-logo"
+          src="/assets/images/linkedin-navy.png"
       /></a>
     </div>
   </div>

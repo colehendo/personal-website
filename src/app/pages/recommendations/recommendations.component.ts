@@ -1,7 +1,7 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 
-import { FADE, PAGE_LOAD_AND_LEAVE } from 'src/app/animations/pages';
+import { FADE_IN } from 'src/app/animations/pages';
 import { BIG_SCREEN } from 'src/app/constants/screen-sizes';
 import { RECOMMENDATIONS } from 'src/app/data/recommendations';
 import { IRecommendation } from 'src/app/interfaces/recommendations';
@@ -13,7 +13,7 @@ const RECOMMENDATION_PARAM_KEY = 'recommendationID';
   selector: 'app-recommendations',
   templateUrl: './recommendations.component.html',
   styleUrls: ['./recommendations.component.scss'],
-  animations: [PAGE_LOAD_AND_LEAVE, FADE],
+  animations: [FADE_IN],
 })
 export class RecommendationsComponent implements OnInit {
   constructor(
