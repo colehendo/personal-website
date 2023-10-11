@@ -54,7 +54,10 @@
         >
         <span>{{ selectedRecommendation.relation }}</span>
       </div>
-      <a [href]="selectedRecommendation.linkedin"
+      <a
+        [href]="selectedRecommendation.linkedin"
+        target="_blank"
+        rel="noopener noreferrer"
         ><img
           class="logo navy-logo linkedin-logo"
           src="/assets/images/linkedin-navy.png"
