@@ -33,7 +33,6 @@ export class RecommendationsComponent implements OnInit {
 
   recommendationCountToShow: number = 0;
   showAllRecommendations: boolean = false;
-  recommendationCountLow: boolean = false;
   showRecommendation: boolean = true;
   screenIsBig: boolean = true;
 
@@ -74,11 +73,8 @@ export class RecommendationsComponent implements OnInit {
   private countProjectsToList() {
     this.recommendationCountToShow =
       this.selectionListService.countListItemsToShow();
-
-    if (this.recommendations.length < this.recommendationCountToShow) {
-      this.showAllRecommendations = true;
-      this.recommendationCountLow = true;
-    }
+    this.showAllRecommendations =
+      this.recommendations.length < this.recommendationCountToShow;
   }
 
   private watchScreenSize() {

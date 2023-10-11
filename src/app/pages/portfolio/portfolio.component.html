@@ -12,13 +12,7 @@
         </mat-option>
       </mat-select>
     </div>
-    <div
-      *ngIf="screenIsBig"
-      class="selection-list-items"
-      [ngClass]="{
-        'fade-bottom-of-selection-list-items': showAllProjects && !projectCountLow,
-      }"
-    >
+    <div *ngIf="screenIsBig" class="selection-list-items">
       <div *ngFor="let project of portfolio; let index = index">
         <div
           @fade-in
@@ -36,8 +30,6 @@
           </p>
         </div>
       </div>
-    </div>
-    <div>
       <span
         *ngIf="screenIsBig && !showAllProjects"
         class="show-more non-selection-list-items"

@@ -33,7 +33,6 @@ export class PortfolioComponent implements OnInit {
 
   projectCountToShow: number = 0;
   showAllProjects: boolean = false;
-  projectCountLow: boolean = false;
   showProject: boolean = true;
   screenIsBig: boolean = true;
 
@@ -41,7 +40,7 @@ export class PortfolioComponent implements OnInit {
     if (projectID === this.selectedProjectID) {
       return;
     }
-    
+
     this.showProject = false;
     this.selectedProjectID = projectID;
 
@@ -69,11 +68,7 @@ export class PortfolioComponent implements OnInit {
 
   private countProjectsToList() {
     this.projectCountToShow = this.selectionListService.countListItemsToShow();
-
-    if (this.portfolio.length < this.projectCountToShow) {
-      this.showAllProjects = true;
-      this.projectCountLow = true;
-    }
+    this.showAllProjects = this.portfolio.length < this.projectCountToShow;
   }
 
   private watchScreenSize() {

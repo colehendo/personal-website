@@ -26,31 +26,22 @@ export class SelectionListService {
     }
   }
 
-  countListItemsToShow() {
-    // Rough estimate on the number of pixels an item comprises
-    const itemHeight = 100;
+  countListItemsToShow(): number {
+    const topSpaceToLeave = 225;
+    const bottomSpaceToLeave = 25;
     const windowHeight = window.innerHeight;
-    const listMaxPercentPageHeight =
-      this.getListMaxPercentPageHeight(windowHeight);
-    const listHeight = Math.ceil(windowHeight * listMaxPercentPageHeight);
-    const countToShow = Math.ceil(listHeight / itemHeight);
+
+    // Number of pixels in an item and its lower padding
+    const itemHeight = 100;
+    const spaceForItems = windowHeight - (topSpaceToLeave + bottomSpaceToLeave);
+    // Subtract 1 to match indexing starting at 0
+    const countToShow = Math.floor(spaceForItems / itemHeight) - 1;
+
+    // Always show at least 1 item
+    if (countToShow < 0) {
+      return 0;
+    }
 
     return countToShow;
-  }
-
-  // Determine the maximum percentage of the
-  // page's height the list can consume
-  private getListMaxPercentPageHeight(windowHeight: number) {
-    // Case switch would be nicer here aesthetically,
-    // but is dramatically slower in performance
-    if (windowHeight > 700) {
-      return 0.5;
-    } else if (windowHeight > 600) {
-      return 0.4;
-    } else if (windowHeight > 450) {
-      return 0.3;
-    } else {
-      return 0.2;
-    }
   }
 }
