@@ -1,7 +1,17 @@
-export const STATEMENT_CONTENTS = `
-I took my first coding class to fulfill a college math credit. I was hooked.
+export const STATEMENT_START = `
+I took my first coding class to fulfill a college math credit. I was instantly hooked.
 
-Ever since, my journey has led me through a variety of disciplines, industries, and interests, with a constant goal of growth. It helped me learn that I am driven by passion, curiosity, and quality; careful planning is essential to good execution; and that empowering colleagues is the greatest value generator over time. Most importantly, it lead me to realize my greatest strengths: organization, decisiveness, and communication.
+Ever since, my journey has led me through a variety of disciplines, industries, and interests, with a constant goal of growth. I have learned that I am driven by passion, curiosity, and quality; that careful planning is essential to good execution; and that by empowering colleagues I can accelerate the entire team's value generation.
 
-I have been able to showcase my skills through a variety of projects. Most notably, I built and scaled a company-wide ticket automation site, slashing my team’s hiring need in half; I led multiple cloud cost reduction efforts, reducing total AWS bills by double-digit percentiles in all instances; and I increased applications to my team by 10-fold through rigorous restructuring and reformatting of the underlying hiring process.
+I have been able to hone my skills through a variety of projects:
+`;
+
+export const STATEMENT_BULLETS = [
+  `Built and scaled a company-wide ticket automation site, slashing my team’s hiring need in half`,
+  `Led multiple cloud cost reduction efforts, reducing total AWS bills by double-digit percentiles in all instances`,
+  `Increased applications to my team by 10-fold through rigorous restructuring and reformatting of the underlying hiring process`,
+];
+
+export const STATEMENT_END = `
+Most importantly, it lead me to realize my greatest strengths: organization, decisiveness, and communication.
 `;

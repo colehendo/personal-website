@@ -7,7 +7,7 @@ export const PORTFOLIO: IProject[] = [
     languages: ['Python', 'Angular', 'Serverless'],
     short_description: 'Cryptocurrency tracking and prediction tool',
     full_description: [
-      'A price prediction platform, which ingests historical and real-time asset prices, and based on a set of indicators, predicts future prices',
+      'A price prediction platform, Smart Signal ingests historical and real-time asset prices, and based on a set of indicators, predicts future prices',
       'Manual decisions can be made through the robust UI, while the backend is leveraged for automated ones',
       'The platform was created to display aptitude for both frontend and backend coding, as well as cloud infrastructure knowledge and applicability',
     ],
@@ -18,7 +18,7 @@ export const PORTFOLIO: IProject[] = [
     languages: ['Python', 'Terraform'],
     short_description: 'Rhyme detection and visualization tool',
     full_description: [
-      'Song lyrics are ingested, a rhyme scheme is detected, and the highlighted scheme is subsequently outputted',
+      'The tool ingests song lyrics, detects a rhyme scheme, and outputs the highlighted scheme',
       'A future iteration of this project will process audio instead of text for more accurate rhyme detection',
     ],
   },
@@ -28,10 +28,10 @@ export const PORTFOLIO: IProject[] = [
     languages: ['Python'],
     short_description: 'Short link click couter and decryptor',
     full_description: [
-      'Code to count the number of clicks to a specific set of encoded short links in a given year',
-      'A sorted list of decoded URLs and their associated click counts is outputted',
+      'The code counts clicks to a specific set of encoded short links in a given year',
+      'It outputs a sorted list of decoded URLs and their associated click counts',
       'This provides a good example of proper object oriented organization, testing, and well documented and readable code',
-      'There are a number of flexibility and extensibility features which were not added as to not over-architect the solution and keep it simple',
+      'For simplicity, I chose not to add several flexibility and extensibility features so as to not over-architect the solution',
     ],
   },
   {
@@ -40,7 +40,7 @@ export const PORTFOLIO: IProject[] = [
     languages: ['Angular', 'Terraform'],
     short_description: 'This website',
     full_description: [
-      'This is my personal website used to display my skills, portfolio, recommendations, resume, contact information, and a personal summary',
+      'This personal website displays my skills, portfolio, recommendations, resume, contact information, and a personal summary',
       'The code behind the site displays proper use of modularization, organization, and use of compact files',
     ],
   },
@@ -50,8 +50,8 @@ export const PORTFOLIO: IProject[] = [
     languages: ['Terraform', 'Docker', 'Bash', 'Helm', 'Python'],
     short_description: 'Infrastructure creation and management templates',
     full_description: [
-      'A set of examples of provisioning and deprovisioning infrastructure',
-      'These examples will be leveraged when building future components to shorten development time',
+      'These are examples of provisioning and deprovisioning infrastructure',
+      'The code can be leveraged when building future components to shorten development time',
     ],
   },
   {
@@ -70,7 +70,7 @@ export const PORTFOLIO: IProject[] = [
     short_description: 'A ticket submission Slack bot',
     full_description: [
       'This deprecated Slack bot was the first iteration of an automated ticket handling product created for a previous employer',
-      'The user could select from a handful of different options, spanning from stack creation, to data migration, to account creation, resulting in a Jira ticket being filed with our DevOps team.',
+      'The user could select from a handful of options, spanning stack creation, data migration, and account creation, resulting in a Jira ticket being filed with our DevOps team.',
     ],
   },
 ];

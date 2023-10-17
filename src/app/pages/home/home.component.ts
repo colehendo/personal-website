@@ -12,7 +12,11 @@ import {
   THIRD_DESCRIPTOR,
 } from 'src/app/animations/home';
 import { VISITED } from 'src/app/constants/cookies';
-import { STATEMENT_CONTENTS } from 'src/app/data/home';
+import {
+  STATEMENT_BULLETS,
+  STATEMENT_END,
+  STATEMENT_START,
+} from 'src/app/data/home';
 
 @Component({
   selector: 'app-home',
@@ -35,7 +39,9 @@ export class HomeComponent implements AfterViewInit, OnInit {
   firstPageLoad: boolean = true;
   showStatement: boolean = false;
 
-  statementContents = STATEMENT_CONTENTS;
+  statementStart = STATEMENT_START;
+  statementBullets = STATEMENT_BULLETS;
+  statementEnd = STATEMENT_END;
 
   ngOnInit() {
     if (!this.cookieService.check(VISITED)) {

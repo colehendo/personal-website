@@ -28,7 +28,12 @@
   </div>
   <div @statement *ngIf="showStatement" id="personal-info-statement-container">
     <div id="personal-info-statement">
-      <p class="multiline">{{ statementContents }}</p>
+      <p class="multiline">{{ statementStart }}</p>
+      <div *ngFor="let bullet of statementBullets" id="personal-info-statement-bullets">
+        <span class="dot-separator">&bull;</span>
+        <p>{{ bullet }}</p>
+      </div>
+      <p class="multiline">{{ statementEnd }}</p>
     </div>
   </div>
 </div>

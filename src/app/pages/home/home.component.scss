@@ -49,6 +49,16 @@
     text-align: justify;
 }
 
+#personal-info-statement-bullets {
+    display: inline-flex;
+    width: 90%;
+}
+
+#personal-info-statement-bullets > p {
+    text-align: justify;
+    margin: 10px 0 0 5px;
+}
+
 .headshot {
     display: flex;
     align-items: center;
@@ -81,6 +91,10 @@
         align-items:normal;
     }
 
+    #personal-info-statement-bullets > span {
+        margin-top: 6px;
+    }
+
     h3, .dot-separator {
         font-size: 15px;
     }
@@ -94,6 +108,10 @@
 @media (max-width: $super-small-page-size) {
     #personal-info-statement-container {
         align-items:normal;
+    }
+
+    #personal-info-statement-bullets > span {
+        margin-top: 7px;
     }
 
     h3, .dot-separator {
