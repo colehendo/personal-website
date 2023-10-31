@@ -74,7 +74,7 @@ export class RecommendationsComponent implements OnInit {
     this.recommendationCountToShow =
       this.selectionListService.countListItemsToShow();
     this.showAllRecommendations =
-      this.recommendations.length < this.recommendationCountToShow;
+      this.recommendations.length <= this.recommendationCountToShow;
   }
 
   private watchScreenSize() {

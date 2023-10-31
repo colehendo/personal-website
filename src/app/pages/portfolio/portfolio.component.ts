@@ -68,7 +68,7 @@ export class PortfolioComponent implements OnInit {
 
   private countProjectsToList() {
     this.projectCountToShow = this.selectionListService.countListItemsToShow();
-    this.showAllProjects = this.portfolio.length < this.projectCountToShow;
+    this.showAllProjects = this.portfolio.length <= this.projectCountToShow;
   }
 
   private watchScreenSize() {
