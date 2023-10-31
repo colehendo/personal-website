@@ -18,7 +18,12 @@ function upload_dist() {
 function invalidate_dist {
     printf "${GREEN}Invalidating the CloudFront Distribution to globally distribute the latest files...${BLANK}\n\n"
 
-    local invalidation_info=$(aws cloudfront create-invalidation --distribution-id "${CLOUDFRONT_DISTRIBUTION}" --paths "/index.html")
+    local invalidation_info=$(
+        aws cloudfront create-invalidation \
+        --distribution-id "${CLOUDFRONT_DISTRIBUTION}" \
+        --paths "/index.html" "/assets/cole-henderson-resume.pdf"
+    )
+
     invalidation_id=$(echo "${invalidation_info}" | jq -r '.Invalidation.Id')
 }
 
