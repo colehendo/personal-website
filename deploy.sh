@@ -21,7 +21,7 @@ function invalidate_dist {
     local invalidation_info=$(
         aws cloudfront create-invalidation \
         --distribution-id "${CLOUDFRONT_DISTRIBUTION}" \
-        --paths "/index.html" "/assets/cole-henderson-resume.pdf"
+        --paths "/index.html" "/assets/*"
     )
 
     invalidation_id=$(echo "${invalidation_info}" | jq -r '.Invalidation.Id')
