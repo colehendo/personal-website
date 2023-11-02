@@ -33,8 +33,4 @@ export const TOOLS: ISkill[] = [
     name: 'Helm',
     experience: 6,
   },
-  {
-    name: 'Kustomize',
-    experience: 4,
-  },
 ];
