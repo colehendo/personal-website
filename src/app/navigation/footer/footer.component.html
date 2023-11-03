@@ -1,23 +1,40 @@
 <mat-toolbar *ngIf="screenIsSmall || screenIsSuperSmall">
-  <div routerLink="" class="nav-item">
+  <div
+    routerLink="/"
+    routerLinkActive="nav-item-highlight"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="nav-item"
+  >
     <img class="icon" src="/assets/images/home.png" />
     <h3 *ngIf="!screenIsSuperSmall">Home</h3>
   </div>
-  <div routerLink="skills" class="nav-item">
+  <div
+    routerLink="skills"
+    routerLinkActive="nav-item-highlight"
+    class="nav-item"
+  >
     <img class="icon" src="/assets/images/skills.png" />
     <h3 *ngIf="!screenIsSuperSmall">Skills</h3>
   </div>
-  <div routerLink="portfolio" class="nav-item">
+  <div
+    routerLink="portfolio"
+    routerLinkActive="nav-item-highlight"
+    class="nav-item"
+  >
     <img class="icon" src="/assets/images/portfolio.png" />
     <h3 *ngIf="!screenIsSuperSmall">Portfolio</h3>
   </div>
-  <div routerLink="recommendations" class="nav-item">
+  <div
+    routerLink="recommendations"
+    routerLinkActive="nav-item-highlight"
+    class="nav-item"
+  >
     <img class="icon" src="/assets/images/like.png" />
     <h3 *ngIf="!screenIsSuperSmall">Recs</h3>
   </div>
   <div class="nav-item">
     <a
-      href="https://colehendo.s3.amazonaws.com/cole-henderson-resume.pdf"
+      href="/assets/cole-henderson-resume.pdf"
       target="_blank"
       rel="noopener noreferrer"
       ><img class="icon" src="/assets/images/user.png" />

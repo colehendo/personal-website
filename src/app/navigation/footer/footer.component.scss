@@ -19,6 +19,11 @@
     display: block;
     text-align: center;
     font-size: 10px;
+    margin: 10px 0 10px 0;
+}
+
+.nav-item-highlight {
+    background-color: $medium-green;
 }
 
 a {
