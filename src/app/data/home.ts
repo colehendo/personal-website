@@ -13,5 +13,5 @@ export const STATEMENT_BULLETS = [
 ];
 
 export const STATEMENT_END = `
-Most importantly, it lead me to realize my greatest strengths: organization, decisiveness, and communication.
+Most importantly, my journey lead me to realize my greatest strengths: organization, decisiveness, and communication.
 `;
