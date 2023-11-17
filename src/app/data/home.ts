@@ -7,7 +7,7 @@ I have been able to hone my skills through a variety of projects:
 `;
 
 export const STATEMENT_BULLETS = [
-  `Built and scaled a company-wide ticket automation application, more than halving my team's hiring needs`,
+  `Built and scaled a company-wide ticket automation application, halving my team's hiring needs`,
   `Led multiple cloud cost reduction efforts, slashing total AWS bills by double-digit percentiles in all instances`,
   `Increased applications to my team by 10-fold through rigorous restructuring and reformatting of the underlying hiring process`,
 ];
